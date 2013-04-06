@@ -11,14 +11,11 @@ class Poi
   embedded_in :route, class_name: "MapRoute"
   
   def self.create_from_location(location)
-    poi = Poi.new(gmaps: true)
-    poi.name = location
-    
     #Not caring for geocoded locations anymore
     #s = Geocoder.search(location)
     #poi.location = [s[0].latitude,s[0].longitude]
-    
-    poi
+
+    new(gmaps: true, name: location)
   end
   
   def gmaps4rails_address

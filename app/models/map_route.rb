@@ -4,12 +4,7 @@ class MapRoute
   embeds_one :destination, class_name: "Poi", inverse_of: :route  
   
   def self.create_from_locations(origin,destination)
-    route = MapRoute.new
-    route.origin = Poi.create_from_location(origin)
-    route.destination = Poi.create_from_location(destination)
-    
-    route.save
-    route
+  create(origin:Poi.create_from_location(origin), destination:Poi.create_from_location(destination))
   end
   
   def markers

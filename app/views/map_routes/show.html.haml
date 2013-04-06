@@ -3,7 +3,10 @@
   - options = {auto_adjust: true, auto_zoom: true, raw: controls}
   = gmaps "map_options" => options, "direction" => {"data" => @json }
   
-  - content_for :search do
-    .well
-      = @json
-      = @json.class
+- content_for :js do
+  = javascript_include_tag ""
+  
+- content_for :search do
+  .well
+    = @json
+    = @json.class
