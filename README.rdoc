@@ -1,7 +1,7 @@
 == Objetivo ==
-Ter Problem/Solution Approach
-Ter Requisitos
-Ter Ferramentas de Agilização
+- Ter Problem/Solution Approach
+- Ter Requisitos
+- Ter Ferramentas de Agilização
 
 == Planejamento ==
 - Ler todo o site
