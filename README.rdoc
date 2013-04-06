@@ -17,10 +17,6 @@
 - Play design a bit
 
 == Protótipo ==
-- Vejo um campo para busca
-- Busco origem
-- Vejo um campo para destino
-- Busco destino
 - Vejo minha rota
 - Aparecem as escolas perto da minha roda
 - As escolas tem um nota
