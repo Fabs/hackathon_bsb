@@ -1,2 +1,4 @@
-%h1 Landing#index
-%p Find me in app/views/landing/index.html.haml
+- content_for :map do
+  - controls = '{scrollwheel: false,zoomControl:true, zoomControlOptions: {position: google.maps.ControlPosition.RIGHT_TOP}, panControlOptions: {position: google.maps.ControlPosition.RIGHT_TOP}}'
+  - json = {map_options: {zoom: 3, center_latitude: -14.235004, center_longitude: -51.92528, raw: controls}}
+  = gmaps json
