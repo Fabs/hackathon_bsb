@@ -11,10 +11,10 @@
       %p
         %ol
           %li
-            = label_tag :origin_name, "Digite sua Origem:"
-            = text_field_tag(:origin_name, "Osasco", :placeholder => "ex: São Paulo")
+            = label_tag :origin_location, "Digite sua Origem:"
+            = text_field_tag(:origin_location, "Osasco", :placeholder => "ex: São Paulo")
           %li
-            = label_tag :origin_name, "Digite seu Destino:"
-            = text_field_tag(:destination_name, "Caraguatatuba", :placeholder => "ex: Caraguatatuba")  
+            = label_tag :origin_location, "Digite seu Destino:"
+            = text_field_tag(:destination_location, "Caraguatatuba", :placeholder => "ex: Caraguatatuba")  
       %p
         = submit_tag "Procurar", class: "btn btn-primary"

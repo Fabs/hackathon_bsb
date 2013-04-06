@@ -5,25 +5,8 @@ class MapRoutesController < ApplicationController
   end
 
   def create
-    @route = MapRoute.new
+    @route = MapRoute.create_from_locations(params[:origin_location],params[:destination_location])
     
-    origin = params[:origin_name]
-    @origin_poi = Poi.new(gmaps: true)
-    @origin_poi.name = origin
-    s = Geocoder.search(origin)
-    @origin_poi.location = [s[0].latitude,s[0].longitude]
-    @route.origin = @origin_poi
-    
-    destination = params[:destination_name]
-    @destination_poi = Poi.new(gmaps: true)
-    @destination_poi.name = destination
-    s = Geocoder.search(destination)
-    @destination_poi.location = [s[0].latitude,s[0].longitude]
-    @route.destination = @destination_poi
-    
-    @origin_poi.save!
-    @destination_poi.save!
-    @route.save!
     redirect_to @route
   end
 

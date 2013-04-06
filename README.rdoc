@@ -41,3 +41,4 @@
 == Refactor ==
 - Duplication on the creation of pois
 - The use of mongo, geocoding and gmaps
+- Remove coordinates if not needed
