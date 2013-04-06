@@ -1,0 +1,37 @@
+Objetivo
+Ter Problem/Solution Approach
+Ter Requisitos
+Ter Ferramentas de Agilização
+
+Planejamento
+- Ler todo o site
+- Reler todas as ideiass
+- Explorar datasets
+- Decide tools to build
+- Analise Problem/Solution and Validation Criteria 
+- Question 30 people about their perception to how put people on school
+- Procurar pesquisas sobre o assunto
+- Procurar soluções parecidas
+- Procurar outros problemas da educação
+
+- Play design a bit
+
+Protótipo
+- Vejo um Mapa
+- Vejo um campo para busca
+- Busco origem
+- Vejo um campo para destino
+- Busco destino
+- Vejo minha rota
+- Aparecem as escolas perto da minha roda
+- As escolas tem um nota
+- Escolhe a melhor nota
+- Algoritmo de nota plugável
+- Dados para algorítimo de nota plugável
+- Histórico de buscas
+- Perto da minha casa
+
+CHORES
+- Add Rspec
+- Remove Test
+- git
