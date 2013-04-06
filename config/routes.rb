@@ -1,5 +1,5 @@
 Bsb::Application.routes.draw do
-  put "map_routes/create"
+  match "rotas/criar" => "map_routes#create", :method => "post", :as => "create_route"
   get "map_routes/show"
   root :to => 'map_routes#new'
 

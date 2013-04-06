@@ -6,13 +6,15 @@
 - content_for :search do
   .well
     %h3
-      hello
-    %p
-      %ol
-        %li
-          Bla bla bla
-          
-        %li
-          Bla bla bla
-    %p
-      = link_to "Procurar", "/", class: "btn btn-primary"
+      Bem vindo
+    = form_tag("/rotas/criar") do
+      %p
+        %ol
+          %li
+            = label_tag :origin_name, "Digite sua Origem:"
+            = text_field_tag(:origin_name, nil, :placeholder => "ex: São Paulo")
+          %li
+            = label_tag :origin_name, "Digite seu Destino:"
+            = text_field_tag(:destination_name, nil, :placeholder => "ex: Caraguatatuba")  
+      %p
+        = submit_tag "Procurar", class: "btn btn-primary"
