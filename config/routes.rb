@@ -1,4 +1,8 @@
 Bsb::Application.routes.draw do
+  put "map_routes/create"
+  get "map_routes/show"
+  root :to => 'map_routes#new'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -45,10 +49,6 @@ Bsb::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  root :to => 'landing#index'
 
   # See how all your routes lay out with "rake routes"
 
