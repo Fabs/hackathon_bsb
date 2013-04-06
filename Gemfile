@@ -41,8 +41,9 @@ gem 'thin'
 #Maps
 gem 'gmaps4rails'
 
-#Twitter Bootstrap + Jquery
+#Twitter Bootstrap + Jquery + haml
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
-gem 'jquery-rails'
+gem "jquery-rails"
+gem "haml-rails"
