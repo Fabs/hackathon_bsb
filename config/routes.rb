@@ -1,6 +1,7 @@
   Bsb::Application.routes.draw do
   match "rotas/criar" => "map_routes#create", :method => "post", :as => "create_route"
-  match "rota/:id" => "map_routes#show", :as => "map_route"
+  match "rotas/:id" => "map_routes#show", :as => "map_route"
+  match "rotas/nova" => "map_routes#new", :as => "new_route"
   
   root :to => 'map_routes#new'
 

@@ -28,6 +28,6 @@ class MapRoutesController < ApplicationController
   end
 
   def show
-    @json = MapRoute.find(params[:id]).markers
+    @json = MapRoute.find(params[:id]).route
   end
 end

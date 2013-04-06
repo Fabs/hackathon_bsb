@@ -6,4 +6,8 @@ class MapRoute
   def markers
     [self.origin,self.destination].to_gmaps4rails
   end
+  
+  def route
+    {"from" => self.origin.name, "to" => self.destination.name}
+  end
 end
