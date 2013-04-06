@@ -39,4 +39,4 @@
 - Alinhar barra do canto com texto do topo
 
 == FRIENDLY ==
-- What if I can't find origin or destination
+- What if I can't find origin or destination (case 1: inexistent, case 2: can't find)

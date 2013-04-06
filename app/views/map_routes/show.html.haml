@@ -1,2 +1,9 @@
-%h1 MapRoutes#show
-%p Find me in app/views/map_routes/show.html.haml
+- content_for :map do
+  - controls = '{scrollwheel: false,zoomControl:true, zoomControlOptions: {position: google.maps.ControlPosition.RIGHT_TOP}, panControlOptions: {position: google.maps.ControlPosition.RIGHT_TOP}}'
+  - options = {raw: controls}
+  = gmaps "map_options" => options, "markers" => {"data" => @json }
+  
+  - content_for :search do
+    .well
+      = @json
+      = @json.class

@@ -1,6 +1,7 @@
-Bsb::Application.routes.draw do
+  Bsb::Application.routes.draw do
   match "rotas/criar" => "map_routes#create", :method => "post", :as => "create_route"
-  get "map_routes/show"
+  match "rota/:id" => "map_routes#show", :as => "map_route"
+  
   root :to => 'map_routes#new'
 
   # The priority is based upon order of creation:
