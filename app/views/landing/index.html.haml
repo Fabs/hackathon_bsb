@@ -4,9 +4,16 @@
   = gmaps json
 
 - content_for :search do
-  .well.sidebar-nav
-    %ul.nav.nav-list
-      %li.nav-header Sidebar
-      %li= link_to "Link 1", "/path1"
-      %li= link_to "Link 2", "/path2"
-      %li= link_to "Link 3", "/path3"
+  .well
+    %h3
+      hello
+    %p
+      %ol
+        %li
+          Bla bla bla
+          
+        %li
+          Bla bla bla
+    %p
+      = link_to "Procurar", "/", class: "btn btn-primary"
+        
