@@ -54,3 +54,7 @@ gem "haml-rails"
 
 gem "mongoid"
 gem 'bson_ext'
+
+group :test, :development do
+  gem "hoe"
+end
