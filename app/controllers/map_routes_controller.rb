@@ -11,6 +11,7 @@ class MapRoutesController < ApplicationController
   end
 
   def show
+    @route = MapRoute.find(params[:id])
     @json = MapRoute.find(params[:id]).route
   end
 end
