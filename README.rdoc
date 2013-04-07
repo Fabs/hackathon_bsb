@@ -17,7 +17,6 @@
 - Play design a bit
 
 == Protótipo ==
-- Vejo minha rota
 - Aparecem as escolas perto da minha roda
 - As escolas tem um nota
 - Escolhe a melhor nota
