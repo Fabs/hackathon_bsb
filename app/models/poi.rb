@@ -11,11 +11,10 @@ class Poi
   embedded_in :route, class_name: "MapRoute"
   
   def self.create_from_location(location)
-    #Not caring for geocoded locations anymore
-    #s = Geocoder.search(location)
-    #poi.location = [s[0].latitude,s[0].longitude]
-
-    new(gmaps: true, name: location)
+    poi = Poi.new(gmaps: true, name: location)
+    s = Geocoder.search(location)
+    poi.location = [s[0].latitude,s[0].longitude]
+    poi
   end
   
   def gmaps4rails_address
@@ -23,4 +22,7 @@ class Poi
    "#{self.name}, #{self.location}, #{self.route}"
   end
   
+  #Speed test for finding places
+  def self.create_random
+  end
 end
