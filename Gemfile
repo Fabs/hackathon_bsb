@@ -40,6 +40,7 @@ gem 'thin'
 #Maps
 gem 'gmaps4rails'
 gem "geocoder"
+gem 'mongoid_geospatial'
 
 #Twitter Bootstrap + Jquery + haml
 gem "therubyracer"

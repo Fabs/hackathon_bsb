@@ -26,11 +26,14 @@ function find_bounds(){
         var bounds = boxes[i];
         $("#boxes").append("<p>");
         $("#boxes").append("Box "+i+": ");
-        $("#boxes").append(Math.round(bounds.Z.b*100)/100 + ", ");
-        $("#boxes").append(Math.round(bounds.Z.d*100)/100 + ", ");        
-        $("#boxes").append(Math.round(bounds.ca.b*100)/100 + ", ");        
-        $("#boxes").append(Math.round(bounds.ca.d*100)/100 + ".");        
+        $("#boxes").append("<br/>[[");        
+        $("#boxes").append(bounds.Z.b+ ",");
+        $("#boxes").append(bounds.ca.b + "],[");        
+        $("#boxes").append(bounds.Z.d+ ",");        
+        $("#boxes").append(bounds.ca.d + "]]");        
         $("#boxes").append("</p>");
+        
+        [[-23.58,-46.7],[-23.55,-46.6]]
         abox = bounds;        
       } 
     }else {

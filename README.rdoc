@@ -5,16 +5,13 @@
 
 == Planejamento ==
 - Ler todo o site
-- Reler todas as ideiass
+- Reler todas as ideias
 - Explorar datasets
-- Decide tools to build
 - Analise Problem/Solution and Validation Criteria 
-- Question 30 people about their perception to how put people on school
 - Procurar pesquisas sobre o assunto
 - Procurar soluções parecidas
 - Procurar outros problemas da educação
-
-- Play design a bit
+- Put database on pendrive
 
 == Protótipo ==
 - Aparecem as escolas perto da minha roda

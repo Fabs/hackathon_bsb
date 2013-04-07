@@ -1,0 +1,4 @@
+- content_for :map do
+  - controls = '{scrollwheel: false,zoomControlOptions: {position: google.maps.ControlPosition.RIGHT_TOP}, panControlOptions: {position: google.maps.ControlPosition.RIGHT_TOP}}'
+  - options = {auto_adjust: true, auto_zoom: true, raw: controls}
+  = gmaps "map_options" => options, "markers" => {data: @json }
