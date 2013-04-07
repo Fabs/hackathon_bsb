@@ -42,6 +42,9 @@ gem 'gmaps4rails'
 gem "geocoder"
 gem 'mongoid_geospatial'
 
+#Crazy Math
+gem "rubystats"
+
 #Twitter Bootstrap + Jquery + haml
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS

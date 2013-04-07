@@ -26,7 +26,7 @@ class MapRoutesController < ApplicationController
     @boxes = params["_json"]
     @markers = []
     @boxes.each do |box|  
-      @markers += Poi.within_box(location: box)
+      @markers += School.within_box(location: box)
     end
     respond_to do |format|
        format.json { render json: @markers.to_gmaps4rails }
