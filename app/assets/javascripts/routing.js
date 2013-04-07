@@ -1,6 +1,6 @@
 var directionService = new google.maps.DirectionsService();
 var rboxer = new RouteBoxer();
-var distance = 1; // km
+var distance = 2; // km
 var debug = true;
 
 function find_bounds(){
