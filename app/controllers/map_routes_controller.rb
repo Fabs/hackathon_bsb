@@ -8,6 +8,7 @@ class MapRoutesController < ApplicationController
   end
 
   def create
+    School.create_random if Poi.count == 0 #Initialize random schools
     @route = MapRoute.create_from_locations(params[:origin_location],params[:destination_location])
     
     redirect_to @route
