@@ -16,9 +16,6 @@ class MapRoutesController < ApplicationController
   def show
     @route = MapRoute.find(params[:id])
     @json = MapRoute.find(params[:id]).route
-    box2 = [[-23.582261432118372,-46.70228136437947],[-23.555281783940814,-46.692470000000014]]
-    box3 = [[-23.582261432118372,-46.692470000000014],[-23.546288567881625,-46.63360181372349]]
-    @markers = (Poi.within_box(location: box3) + Poi.within_box(location: box2)).to_gmaps4rails
   end
   
   def pois
@@ -26,6 +23,13 @@ class MapRoutesController < ApplicationController
   end
   
   def near_route
-    render text: "OK"
+    @boxes = params["_json"]
+    @markers = []
+    @boxes.each do |box|  
+      @markers += Poi.within_box(location: box)
+    end
+    respond_to do |format|
+       format.json { render json: @markers.to_gmaps4rails }
+    end
   end
 end

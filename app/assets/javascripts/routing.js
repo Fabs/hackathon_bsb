@@ -19,17 +19,10 @@ function find_bounds(){
         drawBoxes(boxes);
       }
       
-      var json_data = boxes_to_json(boxes)
-            
-      $.post(
-        "/near_route",
-        json_data,
-        function(data) {
-          alert("Response: " + data);
-      });
-            
+      request_new_markers_from_boxes( boxes_to_json(boxes));
+                              
     }else {
-        alert("fail!");
+
     }
   });
 
@@ -48,13 +41,28 @@ function find_bounds(){
   }
   
   function boxes_to_json(boxes){
-    var json_data = new Array();
+    var hash = {};
+    var box_array = new Array();    
     for (var i = 0; i < boxes.length; i++) {
       var bounds = boxes[i];
-      json_data[i] = [bounds.Z.b,bounds.ca.b],[bounds.Z.d,bounds.ca.d];
+      box_array[i] = [[bounds.Z.b,bounds.ca.b],[bounds.Z.d,bounds.ca.d]];
     } 
-    
-    return JSON.stringify(json_data);
+    hash["_json"] = box_array;
+    return hash;
+  }
+  
+  function request_new_markers_from_boxes(json_data){
+    jQuery.ajax({
+        type: "POST",
+        url: '/near_route',
+        data: JSON.stringify(json_data),
+        success: function(data) {
+          Gmaps.map.addMarkers(data);
+        },
+        dataType: "json",
+        contentType: "application/json",
+        processData: false
+    });
   }
 }
 
