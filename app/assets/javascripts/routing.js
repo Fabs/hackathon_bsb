@@ -2,7 +2,6 @@ var directionService = new google.maps.DirectionsService();
 var rboxer = new RouteBoxer();
 var distance = 1; // km
 var debug = true;
-var abox;
 
 function find_bounds(){
   var request = {
@@ -13,29 +12,22 @@ function find_bounds(){
 
   directionService.route(request, function(result, status) {
     if (status == google.maps.DirectionsStatus.OK) {
-  
-      // Box the overview path of the first route
       var path = result.routes[0].overview_path;
       var boxes = rboxer.box(path, distance);
     
       if (debug){
         drawBoxes(boxes);
       }
-    
-      for (var i = 0; i < boxes.length; i++) {
-        var bounds = boxes[i];
-        $("#boxes").append("<p>");
-        $("#boxes").append("Box "+i+": ");
-        $("#boxes").append("<br/>[[");        
-        $("#boxes").append(bounds.Z.b+ ",");
-        $("#boxes").append(bounds.ca.b + "],[");        
-        $("#boxes").append(bounds.Z.d+ ",");        
-        $("#boxes").append(bounds.ca.d + "]]");        
-        $("#boxes").append("</p>");
-        
-        [[-23.58,-46.7],[-23.55,-46.6]]
-        abox = bounds;        
-      } 
+      
+      var json_data = boxes_to_json(boxes)
+            
+      $.post(
+        "/near_route",
+        json_data,
+        function(data) {
+          alert("Response: " + data);
+      });
+            
     }else {
         alert("fail!");
     }
@@ -53,6 +45,16 @@ function find_bounds(){
        map: Gmaps.map.serviceObject,
      });
    }
+  }
+  
+  function boxes_to_json(boxes){
+    var json_data = new Array();
+    for (var i = 0; i < boxes.length; i++) {
+      var bounds = boxes[i];
+      json_data[i] = [bounds.Z.b,bounds.ca.b],[bounds.Z.d,bounds.ca.d];
+    } 
+    
+    return JSON.stringify(json_data);
   }
 }
 

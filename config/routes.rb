@@ -5,6 +5,9 @@
   match "pois" => "map_routes#pois"
   
   root :to => 'map_routes#new'
+  
+  #API
+  match "near_route" => "map_routes#near_route"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

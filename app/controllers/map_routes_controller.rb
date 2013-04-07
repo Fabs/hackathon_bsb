@@ -24,4 +24,8 @@ class MapRoutesController < ApplicationController
   def pois
     @json = Poi.all.to_gmaps4rails
   end
+  
+  def near_route
+    render text: "OK"
+  end
 end
