@@ -36,6 +36,9 @@ end
 #Server
 gem 'thin'
 
+#heroku
+gem "pg"
+
 #Maps
 gem 'gmaps4rails'
 gem "geocoder"
@@ -57,5 +60,4 @@ gem 'bson_ext'
 group :test, :development do
   gem "hoe"
   gem "sqlite3"
-  gem "pg"
 end
