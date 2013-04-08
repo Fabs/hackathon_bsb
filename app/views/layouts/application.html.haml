@@ -23,6 +23,9 @@
         .row
           .span3
             = image_tag "logo.png", :class => "logo"
+    .container.floating_on_map            
+      .row
+        = yield :query            
     = yield :map
     .arguments    
       .container

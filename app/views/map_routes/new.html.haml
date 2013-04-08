@@ -3,21 +3,17 @@
   - json = {map_options: {center_latitude: -23.5489433, center_longitude: -46.6388182, detect_location: true, center_on_user: true, zoom: 10, raw: controls}}
   = gmaps json
 
-- content_for :search do
-  / .well
-  /   %h3
-  /     Bem vindo
-  /   = form_tag("/rotas/criar") do
-  /     %p
-  /       %ol
-  /         %li
-  /           = label_tag :origin_location, "Digite sua Origem:"
-  /           = text_field_tag(:origin_location, @debug_origin, :placeholder => "ex: São Paulo")
-  /         %li
-  /           = label_tag :origin_location, "Digite seu Destino:"
-  /           = text_field_tag(:destination_location, @debug_destination, :placeholder => "ex: Caraguatatuba")  
-  /     %p
-  /       = submit_tag "Procurar", class: "btn btn-primary"
+- content_for :query do
+  .span1
+  .span10
+    .search
+      %h3
+        Bem vindo
+      = form_tag("/rotas/criar") do
+        = text_field_tag(:origin_location, @debug_origin, :placeholder => "ex: São Paulo")
+        = text_field_tag(:destination_location, @debug_destination, :placeholder => "ex: Caraguatatuba")  
+        = submit_tag "Procurar", class: "btn btn-primary"
+  .span1
 
 - content_for :arguments do
   .span4
@@ -26,9 +22,9 @@
         = image_tag "mapa.png"
       .span3
         %h4.blue
-          Hey s
+          Defina sua Rotina. Nós achamos as Escolas. 
         %p
-          Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon  sdf asdf sadf asdf asdf asdf   
+          Usando as informações do seu caminho do dia dia (ex: De casa ao Trabalho), nosso sistema determina as escolas que estão no seu itinerário ou acessíveis por um pequeno desvio.
     
   .span4
     .row
@@ -36,9 +32,9 @@
         = image_tag "radar.png"
       .span3
         %h4.blue
-          Hey s
+          Encontre a melhor escola para o seu filho
         %p
-          Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon 
+          Nosso sistema usa informações do governo, como resultados do ENEM e do ranking das escolas públicas e privadas no Brasil, para escolher as melhores escolas que estão perto de você.
   
   .span4
     .row
@@ -46,7 +42,12 @@
         = image_tag "correto.png"
       .span3
         %h4.blue
-          Hey s
+          Defina os seus critérios. Nós filtramos.
         %p
-          NononononoonNononononoofsadfasfdsadsfn Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon 
-  
+          Procurando uma escola com linguas? Que fique em um bairro seguro, ou que ofereça natação? Defina os critérios e nosso sistema filtrará aquelas escolas que mais interessam para você e a sua família.
+          
+- content_for :seo do
+  oi
+
+- content_for :footer do
+  oi
