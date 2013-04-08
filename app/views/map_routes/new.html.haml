@@ -5,14 +5,27 @@
 
 - content_for :query do
   .span1
-  .span10
-    .search
-      %h3
-        Bem vindo
-      = form_tag("/rotas/criar") do
-        = text_field_tag(:origin_location, @debug_origin, :placeholder => "ex: São Paulo")
-        = text_field_tag(:destination_location, @debug_destination, :placeholder => "ex: Caraguatatuba")  
-        = submit_tag "Procurar", class: "btn btn-primary"
+  .span10.search
+    %h3.center
+      Encontre a melhor escola para o seu filhos no caminho de casa para o Trabalho.
+    %p.center.subline
+      disponível em todo território brasileiro
+    %p
+    .row.titles
+      .span4
+        Origem (Sua casa)
+      .span4
+        Destino (Seu Trabalho)
+      .span2
+    
+    = form_tag("/rotas/criar") do
+      .row
+        .span4
+          = text_field_tag(:origin_location, @debug_origin, :placeholder => "ex: São Paulo")
+        .span4
+          = text_field_tag(:destination_location, @debug_destination, :placeholder => "ex: Caraguatatuba")  
+        .span2
+          = submit_tag "Encontrar Escolas", class: "btn btn-primary"
   .span1
 
 - content_for :arguments do
