@@ -5,3 +5,20 @@
   To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
   =require twitter-bootstrap-static/fontawesome
   */
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('fonts/proxima-bold.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('fonts/proxima-reg.otf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body{
+  font-family: "ProximaNova", "Helvetica", Arial, Sans-Serif;
+}

@@ -4,17 +4,49 @@
   = gmaps json
 
 - content_for :search do
-  .well
-    %h3
-      Bem vindo
-    = form_tag("/rotas/criar") do
-      %p
-        %ol
-          %li
-            = label_tag :origin_location, "Digite sua Origem:"
-            = text_field_tag(:origin_location, @debug_origin, :placeholder => "ex: São Paulo")
-          %li
-            = label_tag :origin_location, "Digite seu Destino:"
-            = text_field_tag(:destination_location, @debug_destination, :placeholder => "ex: Caraguatatuba")  
-      %p
-        = submit_tag "Procurar", class: "btn btn-primary"
+  / .well
+  /   %h3
+  /     Bem vindo
+  /   = form_tag("/rotas/criar") do
+  /     %p
+  /       %ol
+  /         %li
+  /           = label_tag :origin_location, "Digite sua Origem:"
+  /           = text_field_tag(:origin_location, @debug_origin, :placeholder => "ex: São Paulo")
+  /         %li
+  /           = label_tag :origin_location, "Digite seu Destino:"
+  /           = text_field_tag(:destination_location, @debug_destination, :placeholder => "ex: Caraguatatuba")  
+  /     %p
+  /       = submit_tag "Procurar", class: "btn btn-primary"
+
+- content_for :arguments do
+  .span4
+    .row
+      .span1
+        = image_tag "mapa.png"
+      .span3
+        %h4.blue
+          Hey s
+        %p
+          Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon  sdf asdf sadf asdf asdf asdf   
+    
+  .span4
+    .row
+      .span1
+        = image_tag "radar.png"
+      .span3
+        %h4.blue
+          Hey s
+        %p
+          Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon 
+  
+  .span4
+    .row
+      .span1
+        = image_tag "correto.png"
+      .span3
+        %h4.blue
+          Hey s
+        %p
+          NononononoonNononononoofsadfasfdsadsfn Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon Nononononoon 
+  
