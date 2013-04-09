@@ -8,7 +8,6 @@
 
 .header-bar{
   border-top: 5px solid #0087ff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
   -moz-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
@@ -65,10 +64,27 @@
   }
 }
 
-.faded{
+.seo,.partners,footer,.header-bar{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+.seo,.partners,footer{
+  margin-top: 10px;  
+}
+
+
+.seo{
   color: #CCCCCC;
   text-align: center;
 }
+
 .partners{
-  
+}
+
+.footer{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  img{
+    height: 25px;
+  }
 }

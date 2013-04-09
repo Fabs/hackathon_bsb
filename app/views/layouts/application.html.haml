@@ -30,14 +30,20 @@
       .container
         .row
           = yield :arguments
-    .container.partners
-      .row
+    .partners  
+      .container
+        .row
+          .span12
+            = yield :partners
+    .seo        
+      .container
+        .row
+          .span12
+            = yield :seo
+    .footer
+      .container
         .span12
-          = yield :partners
-    .container
-      .row
-        .span12
-          = yield :seo
+          = image_tag "logo.png", :class => "logo"
       
     /
       Javascripts
