@@ -23,27 +23,32 @@
         .row
           .span3
             = image_tag "logo.png", :class => "logo"
-    .container.floating_on_map            
+    .container.floating_on_map
       = yield :search
     = yield :map
-    .arguments    
-      .container
-        .row
-          = yield :arguments
-    .partners  
-      .container
-        .row
-          .span12
-            = yield :partners
-    .seo        
-      .container
-        .row
-          .span12
-            = yield :seo
+    - if content_for?(:arguments)
+      .arguments    
+        .container
+          .row
+            = yield :arguments
+    - if content_for?(:partners)
+      .partners
+        .container
+          .row
+            .span12
+              = yield :partners
+
+    - if content_for?(:seo)
+      .seo
+        .container
+          .row
+            .span12
+              = yield :seo
     .footer
       .container
-        .span12
-          = image_tag "logo.png", :class => "logo"
+        .row
+          .span12
+            = image_tag "logo.png", :class => "logo"
       
     /
       Javascripts

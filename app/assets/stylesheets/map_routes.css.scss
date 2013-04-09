@@ -64,26 +64,26 @@
   }
 }
 
-.seo,.partners,footer,.header-bar{
-  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+.seo,.partners, .footer{
+  border-top: 1px solid rgba(0, 0, 0, 0.35);
 }
 
-.seo,.partners,footer{
-  margin-top: 10px;  
+.seo,.partners, .footer{
+  padding-top: 10px;  
 }
 
 
 .seo{
   color: #CCCCCC;
-  text-align: center;
+  text-align: center;  
+  padding-bottom: 10px;
 }
 
 .partners{
 }
 
 .footer{
-  margin-top: 10px;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
   img{
     height: 25px;
   }
