@@ -24,20 +24,12 @@
           .span3
             = image_tag "logo.png", :class => "logo"
     .container.floating_on_map            
-      .row
-        = yield :query            
+      = yield :search
     = yield :map
     .arguments    
       .container
         .row
           = yield :arguments
-    .floater
-      .container-fluid
-        .row-fluid
-          .span12
-            = yield :search
-            = bootstrap_flash
-            = yield
     .container.partners
       .row
         .span12
