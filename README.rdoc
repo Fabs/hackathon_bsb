@@ -1,15 +1,13 @@
 == Protótipo
-- Algoritmo de nota plugável (Escolher a melhor nota)
-- Filetros
-- Dados para algorítimo de nota plugável
+- importar escolas para o banco
+- Como fazer as notas das escolas
+- Filtros
 - Histórico de buscas
 
 == DESIGN (comes from http://www.mozio.com/)
 - FavIcon
 - Terminar design da página inicial
-- Pagina inicial está desalinhada
 - Logos
-- Footer
 - Twitter (social networks)
 - xscope (download)
 - ilustrator (download)
@@ -17,14 +15,6 @@
 == FRIENDLY
 - What if I can't find origin or destination (case 1: inexistent, case 2: can't find)
 
-== Refactor
-- Duplication on the creation of pois
-- The use of mongo, geocoding and gmaps
-
 == Custos
 - 10 reais ($4.99) programa de encontrar fontes
 - 42 reais ($25) icones
-
-== Rizzoma Discussions
-- https://rizzoma.com/topic/46c2142095b92c48b02e57719674a78e/
-- https://rizzoma.com/topic/4ab3c5e0b469c4b55e04758d69124106/
