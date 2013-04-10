@@ -20,7 +20,6 @@ function find_bounds(){
       }
       
       request_new_markers_from_boxes( boxes_to_json(boxes));
-                              
     }else {
 
     }
@@ -58,6 +57,7 @@ function find_bounds(){
         data: JSON.stringify(json_data),
         success: function(data) {
           Gmaps.map.addMarkers(data);
+          Gmaps.map.map.panBy(-250,0)                                  
         },
         dataType: "json",
         contentType: "application/json",
@@ -69,6 +69,5 @@ function find_bounds(){
 Gmaps.map.callback = function() {
    google.maps.event.addListenerOnce(Gmaps.map.serviceObject, 'idle', function(){
      find_bounds();
-     Gmaps.map.map.setZoom(Gmaps.map.map.zoom -1);
    });
 }

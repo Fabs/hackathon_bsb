@@ -1,3 +1,10 @@
+== Distribuir Tarefas
+- Criar twitter
+- Comprar domínio
+- Quais são os critérios mais importantes para os pais?
+- Quais são os filtros para fazer?
+- Quais são 
+
 == Protótipo
 - importar escolas para o banco
 - Como fazer as notas das escolas
@@ -10,7 +17,6 @@
 - Logos
 - Twitter (social networks)
 - xscope (download)
-- ilustrator (download)
 
 == FRIENDLY
 - What if I can't find origin or destination (case 1: inexistent, case 2: can't find)
@@ -18,3 +24,8 @@
 == Custos
 - 10 reais ($4.99) programa de encontrar fontes
 - 42 reais ($25) icones
+
+== Second Page
+- Trocar os Markers de origem destino
+- Trocar os markers das escolas
+- Decidir quantas escolas vai fazer
