@@ -65,9 +65,17 @@
     Encontre a Escola Municipal, Escola Estadual, Escola Pública, Escola Particular para o seu filho com Melhor Escola. Procure entre todas as escolas brasileiras usando avaliação nacional de orgãos do governo (ENEM, INEP, Ministério da Educação). 
 
 - content_for :partners do
-  %span
-    Um monte de logotipos
-
+  .row
+    .span1
+      %h3.data_title
+        Dados
+    .span11    
+      .logos
+        =image_tag "logo_dados.png"
+        =image_tag "logo_enem.png"
+        =image_tag "logo_inep.png"
+        =image_tag "logo_ideb.png"
+        =image_tag "logo_ministerio.png"                        
 
 - content_for :footer do
   %span
