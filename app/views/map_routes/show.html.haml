@@ -9,19 +9,24 @@
   = javascript_include_tag "routing"  
   
 - content_for :search do
-  .well
-    %h3
-      Escolas entre:
-    %p
-      %b
-        Origem:
-      = @route.origin.name
-    %p
-      %b
-        Destino:
-      = @route.destination.name
-    #boxes
-    .hidden_area
-      #parameter_from{value: @route.origin.name}
-      #parameter_to{value: @route.destination.name}  
-    
+  .hidden_area
+    #parameter_from{value: @route.origin.name}
+    #parameter_to{value: @route.destination.name}  
+  / .row
+  /   .span3
+  /     .well
+  /       %h3
+  /         Escolas entre:
+  /       %p
+  /         %b
+  /           Origem:
+  /         = @route.origin.name
+  /       %p
+  /         %b
+  /           Destino:
+  /         = @route.destination.name
+  /       #boxes
+  /       .hidden_area
+  /         #parameter_from{value: @route.origin.name}
+  /         #parameter_to{value: @route.destination.name}  
+  /   
