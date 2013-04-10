@@ -19,7 +19,7 @@ class School
   def self.create_random
     puts School.destroy_all
     gen = Rubystats::NormalDistribution.new(5, 2)
-    10000.times do |p|
+    2000.times do |p|
       lat = - (rand(23650000-23440000) + 23440000)/1000000.0
       lon = - (rand(46760000-46500000) + 46500000)/1000000.0
       loc = [lat,lon]
