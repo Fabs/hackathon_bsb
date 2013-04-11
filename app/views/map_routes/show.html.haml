@@ -8,10 +8,9 @@
   = javascript_include_tag "RouteBoxer"
   = javascript_include_tag "routing"  
   
-.hidden_area
-  #parameter_from{value: @route.origin.name}
-  #parameter_to{value: @route.destination.name}  
-  #detour{value: @detour}
-
-.container.floating_on_map_left#school_data
-  
+.container.floating_on_map_left
+  .hidden_area
+    #parameter_from{value: @route.origin.name}
+    #parameter_to{value: @route.destination.name}  
+    #detour{value: @detour}
+  #school_data
