@@ -47,7 +47,7 @@ class MapRoutesController < ApplicationController
   end
   
   def valid_distance_for_param(detour)
-    return 1 if detour == nil or detour.is_blank?
+    return 1 if detour == nil or detour.blank?
 
     detour_int = detour.to_i
     return 0.1 if detour_int < 0.1

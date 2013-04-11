@@ -2,7 +2,7 @@
   match "escola/:id" => "schools#show", :as => "show_escola"
 
   match "rotas/criar" => "map_routes#create", :method => "post", :as => "create_route"
-  match "rotas/:id/distance/:dist" => "map_routes#show", :as => "map_route"
+  match "rotas/:id/desvio/:detour" => "map_routes#show", :as => "map_route"
   match "rotas/:id" => "map_routes#show", :as => "map_route"  
   match "rotas/nova" => "map_routes#new", :as => "new_route"
   match "pois" => "map_routes#pois"
