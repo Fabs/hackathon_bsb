@@ -1,6 +1,3 @@
-== (0) Chores
-- xscope (download)
-
 == (1) First Page
 - Escolher deslocamento
 
@@ -13,7 +10,10 @@
 - Filtros de cor
 - Filtros de tipo de escola
 - Outros Filtros
-- Change Distance
+- Mudar Deslocamento
+
+== (0) Chores
+- xscope (download)
 
 == Distribuir Tarefas
 - Criar twitter
