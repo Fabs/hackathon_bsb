@@ -1,4 +1,6 @@
   Bsb::Application.routes.draw do
+  match "escola/:id" => "schools#show", :as => "show_escola"
+
   match "rotas/criar" => "map_routes#create", :method => "post", :as => "create_route"
   match "rotas/:id/distance/:dist" => "map_routes#show", :as => "map_route"
   match "rotas/:id" => "map_routes#show", :as => "map_route"  

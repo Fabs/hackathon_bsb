@@ -1,0 +1,18 @@
+.container
+  .row
+    .span4
+      %h1 Escola
+      %p
+        = @school.name
+    .span4
+      %h1 Atributos
+      %p
+        = @school.rank
+      %p
+        = @school.location[0]
+      %p
+        = @school.location[1]  
+      %p
+        = @school.gmaps
+    
+    .span4
