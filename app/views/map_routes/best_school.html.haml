@@ -5,6 +5,30 @@
         = image_tag "the_best2.png", :width => 40
         Melhor Escola na rota:
       %p
-        %b
-          nome:
-        = @school.name  
+        %h4
+          %b
+            Nome:
+          %span.no_b
+            = link_to @school.name , show_escola_path(@school)
+      %p
+        %h4
+          %b
+            Rank:
+          %span.no_b
+            = @school.rank  
+  .span8
+.row
+  .span4
+    .well
+      %h3
+        Filtros
+      %p
+        %li
+          %ul
+            Escolas Fracas (rank: 0 a 3)
+          %ul
+            Escolas Medias (rank: 4 a 7)
+          %ul
+            Escolas Fortes (rank: 7 ou +)
+      
+        

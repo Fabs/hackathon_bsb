@@ -61,7 +61,7 @@ function find_bounds(){
           //Gmaps.map.map.setZoom(Gmaps.map.map.zoom +1);
           Gmaps.map.map.panBy(-1*0.1*$("html").width(),0)                                  
           $.get("/best_school/"+best_school_id,function(data){
-            alert(data);
+            $("#school_data").html(data)
           })
         },
         dataType: "json",
