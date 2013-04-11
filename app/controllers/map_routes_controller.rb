@@ -52,6 +52,7 @@ class MapRoutesController < ApplicationController
   
   def best_school
     @school = School.find(params[:id])
+    render layout: "test_ajax"
   end
   
   def valid_distance_for_param(detour)
