@@ -32,7 +32,7 @@ class School
   
   #Marker Properties
   def gmaps4rails_infowindow
-    "#{self.name}: #{self.rank}"
+    "<a href='/escola/#{id}'>#{self.name}</a>: #{self.rank}"
   end
   
   def gmaps4rails_marker_picture

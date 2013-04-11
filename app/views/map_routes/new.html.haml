@@ -31,7 +31,7 @@
           /   = text_field_tag(:detour, @default_detour, :placeholder => "1")
           .span1
             = submit_tag "Encontrar Escolas", class: "btn btn-primary"
-        - unless @errors.empty?
+        - if not @erros.nil? and not @errors.empty?
           .row
             .span1
             .span4.red
