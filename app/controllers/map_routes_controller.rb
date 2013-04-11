@@ -43,8 +43,13 @@ class MapRoutesController < ApplicationController
     end
     @best_school = MapRoute.define_best_school(@markers)
     @json = []
-    @json[0] = @markers.to_gmaps4rails
+    
+    @json[0] = @markers.to_gmaps4rails do |school, marker|
+      marker.infowindow render_to_string(:partial => "/schools/infowindow", :locals => {:school => school })
+    end
+    
     @json[1] = @best_school.id
+    
     respond_to do |format|
        format.json { render json:  @json}
     end
