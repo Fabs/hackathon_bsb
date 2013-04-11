@@ -26,8 +26,6 @@
           .span3
             = image_tag "logo.png", :class => "logo"
     = yield
-    .container.floating_on_map
-      = yield :search
     = yield :map
     - if content_for?(:arguments)
       .arguments    

@@ -56,9 +56,13 @@ function find_bounds(){
         url: '/near_route',
         data: JSON.stringify(json_data),
         success: function(data) {
-          Gmaps.map.addMarkers(data);
+          Gmaps.map.addMarkers(JSON.parse(data[0]));
+          best_school_id = data[1];
           //Gmaps.map.map.setZoom(Gmaps.map.map.zoom +1);
           Gmaps.map.map.panBy(-1*0.1*$("html").width(),0)                                  
+          $.get("/best_school/"+best_school_id,function(data){
+            alert(data);
+          })
         },
         dataType: "json",
         contentType: "application/json",

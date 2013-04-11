@@ -11,6 +11,11 @@ class MapRoute
     create(origin:pois[0], destination:pois[1])
   end
   
+  def self.define_best_school(schools)
+    schools[0].local_best = true
+    return schools[0]
+  end
+  
   def markers
     [self.origin,self.destination].to_gmaps4rails
   end

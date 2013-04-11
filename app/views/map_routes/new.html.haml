@@ -4,7 +4,7 @@
   .sized_map
     = gmaps json
 
-- content_for :search do
+.container.floating_on_map
   .row
     .span12.search
       %h3.center
@@ -31,7 +31,7 @@
           /   = text_field_tag(:detour, @default_detour, :placeholder => "1")
           .span1
             = submit_tag "Encontrar Escolas", class: "btn btn-primary"
-        - if not @erros.nil? and not @errors.empty?
+        - if not @errors.nil? and not @errors.empty?
           .row
             .span1
             .span4.red

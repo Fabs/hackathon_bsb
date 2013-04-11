@@ -11,6 +11,7 @@
   
   #API
   match "near_route" => "map_routes#near_route"
+  match "best_school/:id" => "map_routes#best_school"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

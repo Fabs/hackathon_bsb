@@ -8,26 +8,18 @@
   = javascript_include_tag "RouteBoxer"
   = javascript_include_tag "routing"  
   
-- content_for :search do
-  .hidden_area
-    #parameter_from{value: @route.origin.name}
-    #parameter_to{value: @route.destination.name}  
-    #detour{value: @detour}
+.hidden_area
+  #parameter_from{value: @route.origin.name}
+  #parameter_to{value: @route.destination.name}  
+  #detour{value: @detour}
+.container.floating_on_map_left
   / .row
-  /   .span3
+  /   .span4
   /     .well
   /       %h3
-  /         Escolas entre:
+  /         = image_tag "the_best2.png", :width => 40
+  /         Melhor Escola na rota:
   /       %p
   /         %b
-  /           Origem:
-  /         = @route.origin.name
-  /       %p
-  /         %b
-  /           Destino:
-  /         = @route.destination.name
-  /       #boxes
-  /       .hidden_area
-  /         #parameter_from{value: @route.origin.name}
-  /         #parameter_to{value: @route.destination.name}  
-  /   
+  /           nome:
+  /         = @best.name  

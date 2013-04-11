@@ -41,10 +41,17 @@ class MapRoutesController < ApplicationController
     @boxes.each do |box|  
       @markers += School.within_box(location: box)
     end
-    #School.mark_best_school(@markers)
+    @best_school = MapRoute.define_best_school(@markers)
+    @json = []
+    @json[0] = @markers.to_gmaps4rails
+    @json[1] = @best_school.id
     respond_to do |format|
-       format.json { render json: @markers.to_gmaps4rails }
+       format.json { render json:  @json}
     end
+  end
+  
+  def best_school
+    render text: "OK"
   end
   
   def valid_distance_for_param(detour)

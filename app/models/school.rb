@@ -48,16 +48,25 @@ class School
   
   #Marker Properties
   def gmaps4rails_infowindow
-    "<a href='/escola/#{id}'>#{self.name}</a>: #{self.rank}"
+    "<a href='/escola/#{id}'>#{self.name}</a>: #{self.rank} #{self.local_best}"
   end
   
   def gmaps4rails_marker_picture
-    rank = self.rank.round(0)
-    color = ["ff5047","ff5746","fd8c40","fd903f","fbae38","f9d2230","f5f729","f5f729","b5f521","a1f520","8ef41f","7ef41e","7ef41e"][rank]
-    {
-     "picture" => "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=#{rank}|#{color}|000000",
-     "width" => 21,
-     "height" => 34,
-    }
+    rank = self.rank.round(0)  
+    if self.local_best
+      marker = {
+       "picture" => "/assets/the_best2.png",
+       "width" => 69,
+       "height" => 83,
+      }
+    else
+      color = ["ff5047","ff5746","fd8c40","fd903f","fbae38","f9d2230","f5f729","f5f729","b5f521","a1f520","8ef41f","7ef41e","7ef41e"][rank]
+      marker =  {
+       "picture" => "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=#{rank}|#{color}|000000",
+       "width" => 21,
+       "height" => 34,
+      }
+    end
+    return marker
   end
 end
