@@ -17,4 +17,5 @@
       %h4
         Fotos
       %p
-        fotenhas
+        - panoramio = PanoramioRb.get_panoramas_from_point([school.latitude,school.longitude])
+        = panoramio.count

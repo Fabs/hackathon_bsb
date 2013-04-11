@@ -70,3 +70,5 @@ gem 'guard-livereload'
 #Parser
 gem 'nokogiri'
 gem 'mechanize'
+
+gem 'panoramio-rb'
