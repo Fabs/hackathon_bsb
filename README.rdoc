@@ -6,6 +6,7 @@
 - Escolher deslocamento
 
 == (2) Second Page
+- Gerar escolas dummies para a segunda etapa
 - Melhor Escola
 - Trocar markers da origem destino
 - Marker de melhor escola
@@ -14,6 +15,7 @@
 - Filtros de cor
 - Filtros de tipo de escola
 - Outros Filtros
+- Change Distance
 
 == Distribuir Tarefas
 - Criar twitter

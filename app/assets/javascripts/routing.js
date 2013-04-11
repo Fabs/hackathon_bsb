@@ -1,7 +1,7 @@
 var directionService = new google.maps.DirectionsService();
 var rboxer = new RouteBoxer();
-var distance = 0.5; // km
-var debug = false;
+var distance = $("#distance").attr("value");
+var debug = true;
 
 function find_bounds(){
   var request = {
@@ -57,7 +57,8 @@ function find_bounds(){
         data: JSON.stringify(json_data),
         success: function(data) {
           Gmaps.map.addMarkers(data);
-          Gmaps.map.map.panBy(-250,0)                                  
+          //Gmaps.map.map.setZoom(Gmaps.map.map.zoom +1);
+          Gmaps.map.map.panBy(-1*0.1*$("html").width(),0)                                  
         },
         dataType: "json",
         contentType: "application/json",

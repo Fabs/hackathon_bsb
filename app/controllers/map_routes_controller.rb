@@ -14,7 +14,8 @@ class MapRoutesController < ApplicationController
   end
 
   def show
-    School.create_random if School.count == 0 #Initialize random schools    
+    School.create_random if School.count == 0 #debug, initialize schools if none
+    @distance = valid_distance_for_param(params[:dist])    
     @route = MapRoute.find(params[:id])
     @json = MapRoute.find(params[:id]).route
   end
@@ -32,5 +33,12 @@ class MapRoutesController < ApplicationController
     respond_to do |format|
        format.json { render json: @markers.to_gmaps4rails }
     end
+  end
+  
+  def valid_distance_for_param(distance)
+    distance_int = distance.to_i
+    return 0.1 if distance_int < 0.1
+    return 10 if distance_int > 10
+    return distance_int
   end
 end
