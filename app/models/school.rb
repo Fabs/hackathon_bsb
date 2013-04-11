@@ -6,10 +6,17 @@ class School
   
   acts_as_gmappable :position => :location
   
-  field :gmaps, :type => Boolean
+  field :gmaps, type: Boolean
   field :location, type: Point
-  field :name, :type => String
-  field :rank, :type => Float
+  field :address, type: String
+  field :type, type: String  
+  field :name, type: String
+  
+  field :rank, type: Float
+  field :competence, type: Array
+  field :enem, type: Float
+  field :provabrasil, type: Float
+  
   spatial_index :location
     
   def gmaps4rails_address
