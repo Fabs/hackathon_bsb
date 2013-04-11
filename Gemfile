@@ -63,7 +63,6 @@ group :test, :development do
 end
 
 #Tools
-gem 'heroku'
 gem 'humongous'
 gem 'guard'
 gem 'guard-livereload'
