@@ -12,6 +12,10 @@
 - Change Distance
 - Melhorar Marker Melhor Escola 
 - Trocar markers da origem destino
+- Mudar Deslocamento
+
+== (0) Chores
+- xscope (download)
 
 == Distribuir Tarefas
 - Criar twitter
