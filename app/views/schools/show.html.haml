@@ -3,16 +3,39 @@
     .span4
       %h1 Escola
       %p
+        NOME:
         = @school.name
     .span4
       %h1 Atributos
       %p
+        RANK: 
         = @school.rank
       %p
+        LATITUDE:
         = @school.location[0]
       %p
+        LONGITUDE:
         = @school.location[1]  
       %p
+        IS_GOOGLE_MAPS?:
         = @school.gmaps
-    
-    .span4
+      %p
+        TIPO:
+        = @school.type
+      %p
+        ADDRESS:
+        = @school.name
+      %p
+        COMPETENCES:
+        = @school.competence[0]
+        = @school.competence[1]
+        = @school.competence[2]
+        = @school.competence[3]
+        = @school.competence[4]
+      %p
+        ENEM
+        = @school.enem
+      %p
+        PROVABRASIL
+        = @school.provabrasil
+    .span4    
