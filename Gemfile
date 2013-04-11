@@ -62,6 +62,12 @@ group :test, :development do
   gem "sqlite3"
 end
 
+#Tools
+gem 'heroku'
+gem 'humongous'
+gem 'guard'
+gem 'guard-livereload'
 
+#Parser
 gem 'nokogiri'
 gem 'mechanize'

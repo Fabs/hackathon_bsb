@@ -1,4 +1,5 @@
 class School
+  attr_accessor :local_best
   include Gmaps4rails::ActsAsGmappable
   include Mongoid::Document
   include Mongoid::Geospatial
@@ -28,6 +29,9 @@ class School
       school.save!
       puts school.name
     end
+  end
+  
+  def self.mark_best_school
   end
   
   #Marker Properties

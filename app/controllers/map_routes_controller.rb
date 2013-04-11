@@ -41,6 +41,7 @@ class MapRoutesController < ApplicationController
     @boxes.each do |box|  
       @markers += School.within_box(location: box)
     end
+    MapRoute.mark_best_school(@markers)
     respond_to do |format|
        format.json { render json: @markers.to_gmaps4rails }
     end
