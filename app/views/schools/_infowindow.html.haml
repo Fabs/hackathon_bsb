@@ -12,10 +12,10 @@
         %span.no_b
           = school.rank
           
-      
     .span2 
       %h4
         Fotos
       %p
-        - panoramio = PanoramioRb.get_panoramas_from_point([school.latitude,school.longitude])
-        = panoramio.count
+        - if school.name == "School 1528"
+          - panoramio = PanoramioRb.get_panoramas_from_point([school.location.x,school.location.y])
+          = panoramio.count
