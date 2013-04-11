@@ -3,10 +3,8 @@
 
 == (1) First Page
 - Escolher deslocamento
-- Bug do deslocamento
 
 == (2) Second Page
-- Gerar escolas dummies para a segunda etapa
 - Melhor Escola
 - Trocar markers da origem destino
 - Marker de melhor escola
