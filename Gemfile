@@ -61,3 +61,7 @@ group :test, :development do
   gem "hoe"
   gem "sqlite3"
 end
+
+
+gem 'nokogiri'
+gem 'mechanize'
