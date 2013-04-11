@@ -24,11 +24,23 @@
         .row
           .span1
           .span4
-            = text_field_tag(:origin_location, @debug_origin, :placeholder => "ex: São Paulo")
+            = text_field_tag(:origin_location, @origin, :placeholder => "ex: São Paulo")
           .span4
-            = text_field_tag(:destination_location, @debug_destination, :placeholder => "ex: Caraguatatuba")  
+            = text_field_tag(:destination_location, @destination, :placeholder => "ex: Caraguatatuba")
+          / .span4
+          /   = text_field_tag(:detour, @default_detour, :placeholder => "1")
           .span1
             = submit_tag "Encontrar Escolas", class: "btn btn-primary"
+        - unless @errors.empty?
+          .row
+            .span1
+            .span4.red
+              - if @errors[0]
+                Não foi possível encontrar esse endereço.
+            .span4.red
+              - if @errors[1]
+                Não foi possível encontrar esse endereço.          
+            .span1
 
 - content_for :arguments do
   .span4

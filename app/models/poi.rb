@@ -14,6 +14,8 @@ class Poi
   def self.create_from_location(location)
     poi = Poi.new(gmaps: true, name: location)
     s = Geocoder.search(location)
+    return nil if s.empty?
+    
     poi.location = [s[0].latitude,s[0].longitude]
     poi.save!
     poi

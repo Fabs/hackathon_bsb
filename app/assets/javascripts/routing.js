@@ -1,6 +1,6 @@
 var directionService = new google.maps.DirectionsService();
 var rboxer = new RouteBoxer();
-var distance = $("#distance").attr("value");
+var detour = $("#detour").attr("value");
 var debug = true;
 
 function find_bounds(){
@@ -13,7 +13,7 @@ function find_bounds(){
   directionService.route(request, function(result, status) {
     if (status == google.maps.DirectionsStatus.OK) {
       var path = result.routes[0].overview_path;
-      var boxes = rboxer.box(path, distance);
+      var boxes = rboxer.box(path, detour);
     
       if (debug){
         drawBoxes(boxes);
