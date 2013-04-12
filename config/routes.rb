@@ -6,7 +6,7 @@
   match "rotas/:id" => "map_routes#show", :as => "map_route"  
   match "rotas/nova" => "map_routes#new", :as => "new_route"
   match "pois" => "map_routes#pois"
-  match "avaliacao/criar" => "schools#create_review", :method => "post", :as => "create_review"
+  match "avaliacao/criar" => "schools#create_review", :method => "post", :as => "reviews"
   
   root :to => 'map_routes#new'
   

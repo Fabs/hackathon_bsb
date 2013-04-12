@@ -33,11 +33,11 @@
       %h2 
         Avaliação dos Pais
       %p
-        -(0..4).each do |n|
+        -(0..4).each do |i|
           %p
-            =n+1 
+            = i 
             estrela 
-            =@num_stars[n]
+            = @partition[i]
       %h3
         Avaliações que mais ajudam
       - @reviews.each do |r|
@@ -50,23 +50,25 @@
           =r.text
 
       %h3 Faça sua avaliação
-      = form_tag("/avaliacao/criar") do
+      - @review = Review.new
+      = form_for @review do |f|
         %p
           Nome: 
-          = text_field_tag(:name, @new_user_name)
+          = f.text_field(:user_name)
         %p
-          Estrelas: 
-          = text_field_tag(:stars, @new_stars)
+          Estrelas:         
+          - (1..5).each do |level|
+            = f.radio_button :stars, level, :class => "star"
         %p
           Titulo: 
-          = text_field_tag(:title, @new_title)
+          = f.text_field(:title)
         %p
           Texto: 
-          = text_area_tag(:text, @new_text)
+          = f.text_area(:text)
         %p 
-          = hidden_field_tag(:school, @school.id)
+          = f.hidden_field(:school, :value => @school.id)
         %p
-          = submit_tag "Submeter", class: "btn btn-primary"
+          = f.submit "Submeter", class: "btn btn-primary"
 
     .span4
       %h1 Localização
