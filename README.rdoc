@@ -3,9 +3,7 @@
 - Autocompletar de endereços
 
 == (2) Second Page
-- Melhor Escola
 - Trocar markers da origem destino
-- Marker de melhor escola
 - Box da escola com notas
 - Imagens do panoramio
 - Filtros de cor
@@ -17,9 +15,9 @@
 - xscope (download)
 
 == Distribuir Tarefas
+- escolher o nome
 - Criar twitter
 - Comprar domínio
-- Quais são os critérios mais importantes para os pais?
 - Quais são os filtros para fazer?
 - Olhar e refazer os textos da página inicial
 
@@ -29,6 +27,7 @@
 - Achar lat lang
 - Achar filtros
 - Migrar de só SP para O MUNDO
+- Segurança
 
 == Pedro
 - Página social
