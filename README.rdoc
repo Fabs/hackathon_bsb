@@ -1,17 +1,16 @@
 == (1) First Page
 - Escolher deslocamento
+- Autocompletar de endereços
 
 == (2) Second Page
 - Melhor Escola
+- Trocar markers da origem destino
 - Marker de melhor escola
 - Box da escola com notas
 - Imagens do panoramio
 - Filtros de cor
 - Filtros de tipo de escola
 - Outros Filtros
-- Change Distance
-- Melhorar Marker Melhor Escola 
-- Trocar markers da origem destino
 - Mudar Deslocamento
 
 == (0) Chores
@@ -33,6 +32,9 @@
 
 == Pedro
 - Página social
+- Validar form
+- CSS
+- Botao voltar para a rota
 
 == Custos
 - 10 reais ($4.99) programa de encontrar fontes
