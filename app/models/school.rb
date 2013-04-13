@@ -6,6 +6,10 @@ class School
   
   acts_as_gmappable :position => :location
   
+  # micro_censo fields
+  field :pk_cod_entidade, type: Integer
+  field :no_entidade, type: String
+
   field :gmaps, type: Boolean 
   field :location, type: Point
   field :address, type: String
