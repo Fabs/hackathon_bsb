@@ -38,6 +38,7 @@ class MapRoutesController < ApplicationController
   def near_route
     @boxes = params["_json"]
     @markers = []
+    
     @boxes.each do |box|  
       @markers += School.within_box(location: box)
     end
