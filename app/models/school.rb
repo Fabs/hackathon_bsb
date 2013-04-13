@@ -1,6 +1,7 @@
 #encoding: utf-8
 class School
   attr_accessor :local_best
+  attr_accessor :local_quality
   include Gmaps4rails::ActsAsGmappable
   include Mongoid::Document
   include Mongoid::Geospatial
@@ -34,7 +35,7 @@ class School
   def self.create_random
     puts School.destroy_all
     gen = Rubystats::NormalDistribution.new(5, 2)
-    gen_enem = Rubystats::NormalDistribution.new(250, 60)
+    gen_enem = Rubystats::NormalDistribution.new(5, 2)
     2000.times do |p|
       lat = - (rand(23650000-23440000) + 23440000)/1000000.0
       lon = - (rand(46760000-46500000) + 46500000)/1000000.0
@@ -60,7 +61,11 @@ class School
   end
   
   def gmaps4rails_marker_picture
-    rank = self.rank.round(0)  
+    rank = self.quality(0,0)
+    puts rank
+    score = self.provabrasil.round(1)
+    puts score
+    
     if self.local_best
       marker = {
        "picture" => "/assets/the_best2.png",
@@ -68,9 +73,9 @@ class School
        "height" => 83,
       }
     else
-      color = ["ff5047","ff5746","fd8c40","fd903f","fbae38","f9d2230","f5f729","f5f729","b5f521","a1f520","8ef41f","7ef41e","7ef41e"][rank]
+      color = ["ff5047","f9d230","7ef41e"][rank]
       marker =  {
-       "picture" => "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=#{rank}|#{color}|000000",
+       "picture" => "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=#{score}|#{color}|000000",
        "width" => 21,
        "height" => 34,
       }
@@ -116,5 +121,29 @@ class School
       "has_sport" => "Aulas de Esporte",
       "has_art" => "Aulas de Arte"
     }
+  end
+  
+  #Statistical Map
+  def self.local_average(schools)
+    schools.inject(0){|sum,s| sum + s.provabrasil} / schools.count.to_f
+  end
+  
+  def self.local_deviation(schools)
+    ex2 = schools.inject(0){|sum,s| sum + (s.provabrasil**2)} / schools.count.to_f    
+    ex = School.local_average(schools)
+    (ex2 - ex*ex)**0.5
+  end
+  
+  def quality(average,deviation)
+    if self.local_quality == nil
+      if self.provabrasil < average - 0.53*deviation 
+        self.local_quality =  0 
+      elsif self.provabrasil > average + 0.53*deviation 
+        self.local_quality =  2 
+      else
+        self.local_quality = 1
+      end
+    end
+    return self.local_quality
   end
 end

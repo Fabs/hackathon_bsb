@@ -44,6 +44,9 @@ class MapRoutesController < ApplicationController
     end
     @best_school = MapRoute.define_best_school(@markers)
     @json = []
+
+    average = School.local_average(@markers)
+    deviation = School.local_deviation(@markers)
     
     @json[0] = @markers.to_gmaps4rails do |school, marker|
       marker.infowindow render_to_string(:partial => "/schools/infowindow", :locals => {school: school });
@@ -53,10 +56,14 @@ class MapRoutesController < ApplicationController
         has_library: school.has_library , 
         has_laboratory: school.has_laboratory,         
         has_sport: school.has_sport, 
-        has_art: school.has_art} });
+        has_art: school.has_art,
+        quality_category: school.quality(average,deviation)} },
+        );
     end
     
     @json[1] = @best_school.id
+    
+    @json[2] = [average,deviation]
     
     respond_to do |format|
        format.json { render json:  @json}
