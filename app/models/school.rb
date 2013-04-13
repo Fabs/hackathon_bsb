@@ -63,7 +63,7 @@ class School
   def gmaps4rails_marker_picture
     rank = self.quality(0,0)
     puts rank
-    score = self.provabrasil.round(1)
+    score = self.provabrasil.round(0)
     puts score
     
     if self.local_best
@@ -112,6 +112,10 @@ class School
     ["has_computer","has_internet","has_library","has_laboratory","has_sport","has_art"]
   end
   
+  def self.color_filters
+    ["low_quality","normal","high_quality"]
+  end
+
   def self.i18npt
     {
       "has_computer" => "Computador",
@@ -119,7 +123,10 @@ class School
       "has_library" => "Biblioteca",
       "has_laboratory" => "Laboratório",
       "has_sport" => "Aulas de Esporte",
-      "has_art" => "Aulas de Arte"
+      "has_art" => "Aulas de Arte",
+      "low_quality" => "Fraco",
+      "normal" => "Médio",
+      "high_quality" => "Forte",
     }
   end
   

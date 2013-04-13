@@ -1,7 +1,7 @@
 var directionService = new google.maps.DirectionsService();
 var rboxer = new RouteBoxer();
 var detour = $("#detour").attr("value");
-var debug = true;
+var debug = false;
 
 function find_bounds(){
   var request = {

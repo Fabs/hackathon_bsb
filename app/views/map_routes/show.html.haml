@@ -19,11 +19,23 @@
       .well.filters
         %p
           %h4
+            Desempenho das escolas (nesta região)
+        - School.color_filters.each_with_index do |f,i|
+          .filter_area
+            = image_tag "#{f}.png"
+            = check_box_tag f,"1", checked = true, :class => "filter_control_quality", :filter_type => i
+            = School.i18npt[f]
+  .row
+    .span4
+      .well.filters
+        %p
+          %h4
             Recursos Extras
         - School.filters.each do |f|
           .filter_area
             = image_tag "#{f}.png"
             = check_box_tag f,"1", checked = false, :class => "filter_control", :filter_type => f
             = School.i18npt[f]
+            
       #school_data
     

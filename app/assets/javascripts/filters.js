@@ -19,3 +19,16 @@ $(".filter_control").change(function (){
     marker.serviceObject.setVisible(active);
   }
 });
+
+$(".filter_control_quality").change(function (){
+  category = $(this).attr("filter_type");
+  state = $(this).is(':checked');
+  
+  for (var i=0; i<Gmaps.map.markers.length; i++) {
+    marker = Gmaps.map.markers[i];
+    marker_category = marker.filter_logic["quality_category"].toString();
+    if (marker_category == category){
+      marker.serviceObject.setVisible(state);
+    }
+  }
+});
