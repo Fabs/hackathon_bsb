@@ -15,6 +15,11 @@
 
 .well.filters{
   img{
-    width: 32px;
+    width: 24px;
+  }
+  .filter_area{
+    display:inline-block;
+    width: 160px;
+    margin-bottom: 8px;
   }
 }

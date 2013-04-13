@@ -1,3 +1,4 @@
+#encoding: utf-8
 class School
   attr_accessor :local_best
   include Gmaps4rails::ActsAsGmappable
@@ -104,5 +105,16 @@ class School
   
   def self.filters
     ["has_computer","has_internet","has_library","has_laboratory","has_sport","has_art"]
+  end
+  
+  def self.i18npt
+    {
+      "has_computer" => "Computador",
+      "has_internet" => "Internet",
+      "has_library" => "Biblioteca",
+      "has_laboratory" => "Laboratório",
+      "has_sport" => "Aulas de Esporte",
+      "has_art" => "Aulas de Arte"
+    }
   end
 end

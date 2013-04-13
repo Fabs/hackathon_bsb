@@ -17,10 +17,13 @@
   .row
     .span4
       .well.filters
+        %p
+          %h4
+            Recursos Extras
         - School.filters.each do |f|
-          %p
+          .filter_area
             = image_tag "#{f}.png"
             = check_box_tag f,"1", checked = true, :class => "filter_control", :filter_type => f
-            = f
-        #school_data
+            = School.i18npt[f]
+      #school_data
     
