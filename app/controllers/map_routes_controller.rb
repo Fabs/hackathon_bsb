@@ -52,7 +52,7 @@ class MapRoutesController < ApplicationController
         has_internet: school.has_internet , 
         has_library: school.has_library , 
         has_laboratory: school.has_laboratory,         
-        has_board: school.has_board, 
+        has_sport: school.has_sport, 
         has_art: school.has_art} });
     end
     

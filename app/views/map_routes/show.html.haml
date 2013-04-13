@@ -16,9 +16,10 @@
     #detour{value: @detour}
   .row
     .span4
-      .well
+      .well.filters
         - School.filters.each do |f|
           %p
+            = image_tag "#{f}.png"
             = check_box_tag f,"1", checked = true, :class => "filter_control", :filter_type => f
             = f
         #school_data

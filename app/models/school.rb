@@ -94,7 +94,7 @@ class School
   end
   
   
-  def has_board
+  def has_sport
     magic % 32 == 0  
   end
   
@@ -103,6 +103,6 @@ class School
   end
   
   def self.filters
-    ["has_computer","has_internet","has_library","has_laboratory","has_board","has_art"]
+    ["has_computer","has_internet","has_library","has_laboratory","has_sport","has_art"]
   end
 end
