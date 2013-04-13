@@ -51,6 +51,17 @@ class School
   # End Prova Brasil
   #
 
+  #
+  # Begin Geolocation
+  #
+
+  field :cep, type: String
+
+  #
+  #
+  # End Geolocation
+  #
+
   attr_accessor :local_best
   include Gmaps4rails::ActsAsGmappable
   include Mongoid::Geospatial
