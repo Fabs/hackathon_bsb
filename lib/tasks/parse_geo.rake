@@ -1,5 +1,5 @@
 desc "Parse latitude/longitude of schools"
-# Example: rake parse_quest_escola[/path/to/geo.csv]
+# Example: rake parse_geo[/path/to/geo.csv]
 
 # TODO: This is duplicated code, shared with other(s) task(s)
 def find_or_create_school(id)
@@ -35,6 +35,8 @@ task :parse_geo, [:file] => :environment do |t, args|
     # New information to be saved
     school.location = [latitude, longitude]
     school.cep = cep
+
+    puts school.location
 
     school.save!
   end

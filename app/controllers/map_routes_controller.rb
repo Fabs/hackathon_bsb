@@ -25,7 +25,6 @@ class MapRoutesController < ApplicationController
   end
 
   def show
-    School.create_random if School.count == 0 #debug, initialize schools if none
     @detour = valid_distance_for_param(params[:detour])    
     @route = MapRoute.find(params[:id])
     @json = MapRoute.find(params[:id]).route
@@ -42,7 +41,6 @@ class MapRoutesController < ApplicationController
     @boxes.each do |box|  
       @markers += School.within_box(location: box)
     end
-    @best_school = MapRoute.define_best_school(@markers)
     @json = []
 
     average = School.local_average(@markers)
@@ -61,7 +59,7 @@ class MapRoutesController < ApplicationController
         );
     end
     
-    @json[1] = @best_school.id
+    @json[1] = 0
     
     @json[2] = [average,deviation]
     

@@ -90,23 +90,11 @@ class School
    "#{self.name}: #{self.rank}"
   end
   
-  #Speed test for finding places
-  def self.create_random
-    puts School.destroy_all
-    gen = Rubystats::NormalDistribution.new(5, 2)
-    gen_enem = Rubystats::NormalDistribution.new(5, 2)
-    2000.times do |p|
-      lat = - (rand(23650000-23440000) + 23440000)/1000000.0
-      lon = - (rand(46760000-46500000) + 46500000)/1000000.0
-      loc = [lat,lon]
-      school = School.new(gmaps: true, name: "School #{p}")
+  def self.create_random_provabrasil
+    gen_pb = Rubystats::NormalDistribution.new(5, 2)
+    School.all.each do |school|
       school.magic = rand(64)
-      school.location = loc
-      school.rank = gen.rng.round(1)
-      school.type = ["Publica","Privada"][p % 2]
-      school.competence = [gen_enem.rng.round(2),gen_enem.rng.round(2),gen_enem.rng.round(2),gen_enem.rng.round(2),gen_enem.rng.round(2)]
-      school.enem = gen_enem.rng.round(2)
-      school.provabrasil = gen_enem.rng.round(2)
+      school.provabrasil = gen_pb.rng.round(2)
       school.save!
     end
   end
