@@ -1,0 +1,7 @@
+all:
+	rake destroy_everything
+	rake parse_quest_escola[inep/dados/microdados_prova_brasil_2011/Dados/TS_QUEST_ESCOLA.csv]
+	rake parse_resultado_escola[inep/dados/microdados_prova_brasil_2011/Dados/TS_RESULTADO_ESCOLA.csv]
+	rake random_provabrasil
+	rake parse_geo[scraping/geo.csv]	
+
