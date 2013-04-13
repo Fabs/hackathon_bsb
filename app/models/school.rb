@@ -51,10 +51,7 @@ class School
       school.save!
     end
   end
-  
-  def self.mark_best_school
-  end
-  
+    
   #Marker Properties
   def gmaps4rails_infowindow
     "<a href='/escola/#{id}'>#{self.name}</a>: #{self.rank} #{self.local_best}"
@@ -62,24 +59,14 @@ class School
   
   def gmaps4rails_marker_picture
     rank = self.quality(0,0)
-    puts rank
     score = self.provabrasil.round(0)
-    puts score
-    
-    if self.local_best
-      marker = {
-       "picture" => "/assets/the_best2.png",
-       "width" => 69,
-       "height" => 83,
-      }
-    else
-      color = ["ff5047","f9d230","7ef41e"][rank]
-      marker =  {
-       "picture" => "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=#{score}|#{color}|000000",
-       "width" => 21,
-       "height" => 34,
-      }
-    end
+  
+    color = ["ff5047","f9d230","7ef41e"][rank]
+    marker =  {
+     "picture" => "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=#{score}|#{color}|000000",
+     "width" => 21,
+     "height" => 34,
+    }
     return marker
   end
   
