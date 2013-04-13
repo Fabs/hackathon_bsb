@@ -9,11 +9,30 @@
   = javascript_include_tag "filters"
   = javascript_include_tag "routing"
   
+.container.school_count_notifier
+  .span6
+    .alert.alert-info
+      //= image_tag 
+      Você está vendo 
+      %span#total_schools
+        25 
+      escolas públicas dentre 
+      %span#total_schools
+        350 
+      na sua região
+      
+  
 .container.floating_on_map_left
   .hidden_area
     #parameter_from{value: @route.origin.name}
     #parameter_to{value: @route.destination.name}  
     #detour{value: @detour}
+    
+  .row
+    .span4
+      .well
+        %h4
+          Selecione o que você acha importante em uma escola.
   .row
     .span4
       .well.filters
