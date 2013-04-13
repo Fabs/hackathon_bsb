@@ -1,9 +1,27 @@
 desc "Parse ts_quest_escola data"
-# Example: rake create_schools[/path/to/microdados_prova_brasil_2011/Dados/TS_QUEST_ESCOLA.csv]
+# Example: rake parse_quest_escola[/path/to/microdados_prova_brasil_2011/Dados/TS_QUEST_ESCOLA.csv]
 
-def getAnswer(campos, question)
+# TODO: This is duplicated code, shared with other(s) task(s)
+def find_or_create_school(id)
+  results = School.where(:pk_cod_entidade => id)
+
+  if results.count > 0
+    school = results.first
+  else
+    school = School.create!(
+      pk_cod_entidade: id,
+      # Required fields
+      location: [0, 0],
+      gmaps: true
+    )
+  end
+
+  return school
+end
+
+def getAnswer(fields, question)
   index = 6 + question
-  value = campos[index]
+  value = fields[index]
 
   validAnswers = ['A', 'B', 'C', 'D']
   if validAnswers.include?(value)
@@ -15,26 +33,26 @@ def getAnswer(campos, question)
   return answer
 end
 
-task :parse_quest_escola, [:ts_quest_escola] => :environment do |t, args|
+task :parse_quest_escola, [:file] => :environment do |t, args|
   codSaoPaulo = '3550308'
 
-  IO.foreach(args.ts_quest_escola) do |linha|
-    campos = linha.split(';')
+  IO.foreach(args.file) do |linha|
+    fields = linha.split(';')
 
     # Same names than header, but lowercase
     # Only city of São Paulo so far
-    id_municipio = campos[2]
+    id_municipio = fields[2]
     next if id_municipio != codSaoPaulo
 
     # Getting school in database to be updated
-    id_escola = campos[3].to_i
-    school = School.find_by(:pk_cod_entidade => id_escola)
+    id_escola = fields[3].to_i
+    school = find_or_create_school(id_escola)
 
     # New information to be saved
-    school.tx_resp_q037 = getAnswer(campos, 37)
-    school.tx_resp_q038 = getAnswer(campos, 38)
-    school.tx_resp_q056 = getAnswer(campos, 56)
-    school.tx_resp_q058 = getAnswer(campos, 58)
+    school.tx_resp_q037 = getAnswer(fields, 37)
+    school.tx_resp_q038 = getAnswer(fields, 38)
+    school.tx_resp_q056 = getAnswer(fields, 56)
+    school.tx_resp_q058 = getAnswer(fields, 58)
 
     school.save!
   end

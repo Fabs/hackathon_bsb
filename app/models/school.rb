@@ -45,7 +45,6 @@ class School
   # Begin Prova Brasil
   #
 
-  field :id_serie, type: Hash
   embeds_many :grades
 
   #
