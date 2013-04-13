@@ -16,6 +16,8 @@ class School
   field :competence, type: Array
   field :enem, type: Float
   field :provabrasil, type: Float
+
+  field :magic, type: Float  
   
   spatial_index :location
     
@@ -33,6 +35,7 @@ class School
       lon = - (rand(46760000-46500000) + 46500000)/1000000.0
       loc = [lat,lon]
       school = School.new(gmaps: true, name: "School #{p}")
+      school.magic = rand(64)
       school.location = loc
       school.rank = gen.rng.round(1)
       school.type = ["Publica","Privada"][p % 2]
@@ -68,5 +71,34 @@ class School
       }
     end
     return marker
+  end
+  
+  def has_computer
+    magic % 2 == 0
+  end
+    
+  def has_internet
+    magic % 4 == 0    
+  end
+  
+  def has_library
+    magic % 8 == 0
+  end
+  
+  def has_laboratory
+    magic % 16 == 0
+  end
+  
+  
+  def has_board
+    magic % 32 == 0  
+  end
+  
+  def has_art
+    magic % 64 == 0    
+  end
+  
+  def self.filters
+    ["has_computer","has_internet","has_library","has_laboratory","has_board","has_art"]
   end
 end

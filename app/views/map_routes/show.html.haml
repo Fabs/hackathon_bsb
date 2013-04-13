@@ -14,4 +14,12 @@
     #parameter_from{value: @route.origin.name}
     #parameter_to{value: @route.destination.name}  
     #detour{value: @detour}
-  #school_data
+  .row
+    .span4
+      .well
+        - School.filters.each do |f|
+          %p
+            = check_box_tag f,"1", checked = true, :class => "filter_control", :filter_type => f
+            = f
+        #school_data
+    

@@ -45,7 +45,14 @@ class MapRoutesController < ApplicationController
     @json = []
     
     @json[0] = @markers.to_gmaps4rails do |school, marker|
-      marker.infowindow render_to_string(:partial => "/schools/infowindow", :locals => {school: school })
+      marker.infowindow render_to_string(:partial => "/schools/infowindow", :locals => {school: school });
+      marker.json({ filter_logic: {
+        has_computer: school.has_computer , 
+        has_internet: school.has_internet , 
+        has_library: school.has_library , 
+        has_laboratory: school.has_laboratory,         
+        has_board: school.has_board, 
+        has_art: school.has_art} });
     end
     
     @json[1] = @best_school.id
