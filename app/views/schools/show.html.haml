@@ -71,4 +71,6 @@
           = f.submit "Submeter", class: "btn btn-primary"
 
     .span4
-      %h1 Localização
+      %h1 
+        Localização
+      = gmaps markers: {data: Poi.first.to_gmaps4rails}

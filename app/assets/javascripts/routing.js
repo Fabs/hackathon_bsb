@@ -60,6 +60,7 @@ function find_bounds(){
           best_school_id = data[1];
           //Gmaps.map.map.setZoom(Gmaps.map.map.zoom +1);
           Gmaps.map.map.panBy(-1*0.1*$("html").width(),0)                                  
+          install_filters();
           $.get("/best_school/"+best_school_id,function(data){
             $("#school_data").html(data)
           })
