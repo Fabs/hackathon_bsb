@@ -17,6 +17,12 @@
   .logo{
     height: 42px;
   }
+  .span8 {
+    font-size: 22px;
+    color: #0087ff;
+    padding: 18px 0px 0px 0px;
+    margin: 0;
+  }
 }
 
 .arguments{
@@ -30,6 +36,10 @@
 
 .blue{
   color: #0087ff;
+}
+
+.orange {
+  color: #f46511;
 }
 
 .floating_on_map{
@@ -69,6 +79,9 @@
     margin-top:-15px;
     color: #777777;
     position:relative;
+  }
+  h3{
+    font-size: 24px;
   }
 }
 
@@ -135,4 +148,12 @@
 
 .no_b{
   font-weight: normal;
+}
+
+.row.titles{
+  .span4 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
 }

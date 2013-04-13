@@ -8,16 +8,14 @@
   .row
     .span12.search
       %h3.center
-        Encontre a melhor escola para os seus filhos no caminho de casa para o Trabalho.
-      %p.center.subline
-        disponível em todo território brasileiro
+        Coloque o endereço da onde você mora e da onde você trabalha e descubra agora mesmo as melhores escolas  no caminho até o seu trabalho.
       %p
       .row.titles
         .span1
-        .span4
-          Origem (Sua casa)
-        .span4
-          Destino (Seu Trabalho)
+        .span4.orange
+          Sua casa
+        .span4.orange
+          Seu Trabalho
         .span1
     
       = form_tag("/rotas/criar") do
@@ -30,7 +28,7 @@
           / .span4
           /   = text_field_tag(:detour, @default_detour, :placeholder => "1")
           .span1
-            = submit_tag "Encontrar Escolas", class: "btn btn-primary"
+            = submit_tag "Ache a escola!", class: "btn btn-primary"
         - if not @errors.nil? and not @errors.empty?
           .row
             .span1
@@ -49,9 +47,10 @@
         = image_tag "mapa.png"
       .span3
         %h4.blue
-          Defina sua Rotina. Nós achamos as Escolas. 
+          1. Encontre as escolas entre sua casa e o seu trabalho
+  
         %p
-          Usando as informações do seu caminho do dia dia (ex: De casa ao Trabalho), nosso sistema determina as escolas que estão no seu itinerário ou acessíveis por um pequeno desvio.
+          Trace a rota da sua casa para o seu trabalho e encontre as melhores escolas públicas no seu caminho. 
     
   .span4
     .row
@@ -59,9 +58,9 @@
         = image_tag "radar.png"
       .span3
         %h4.blue
-          Encontre a melhor escola para o seu filho
+          2. Compare o que cada escola oferece
         %p
-          Nosso sistema usa informações do governo, como resultados do ENEM e do ranking das escolas públicas e privadas no Brasil, para escolher as melhores escolas que estão perto de você.
+          Compare o que realmente importa para você na escola: desempenho, segurança, infraestrutura.
   
   .span4
     .row
@@ -69,9 +68,9 @@
         = image_tag "correto.png"
       .span3
         %h4.blue
-          Defina os seus critérios. Nós filtramos.
+          3. Escolha a escola ideal para o seu filho
         %p
-          Procurando uma escola com linguas? Que fique em um bairro seguro, ou que ofereça natação? Defina os critérios e nosso sistema filtrará aquelas escolas que mais interessam para você e a sua família.
+          Ache a melhor escola para o seu filho e veja como matriculá-lo nela.
           
 - content_for :seo do
   %span
