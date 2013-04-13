@@ -5,8 +5,11 @@ class School
   # micro_censo fields
   field :pk_cod_entidade, type: Integer
   field :no_entidade, type: String
+  index({ pk_cod_entidade: 1 }, {unique: true, name: 'pk_cod_entidade_index'})
 
+  #
   # Begin resources
+  #
 
   # Questionário escola (Prova Brasil)
   field :tx_resp_q037, type: String # computer
@@ -34,7 +37,20 @@ class School
     trueValues.include?(self.tx_resp_q058)
   end
 
+  #
   # End resources
+  #
+
+  #
+  # Begin Prova Brasil
+  #
+
+  field :id_serie, type: Hash
+  embeds_many :grades
+
+  #
+  # End Prova Brasil
+  #
 
   attr_accessor :local_best
   include Gmaps4rails::ActsAsGmappable
