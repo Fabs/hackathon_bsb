@@ -1,5 +1,5 @@
 desc "Create schools with micro_censo data"
-# Example: rake create_schools[/path/to/TS_ESCOLA.TXT]
+# Example: rake create_schools[/path/to/micro_censo_escolar_2012/DADOS/TS_ESCOLA.txt]
 
 task :create_schools, [:ts_escola] => :environment do |t, args|
   codSaoPaulo = '3550308'
