@@ -1,6 +1,6 @@
 #encoding: utf-8
 class School
-  attr_accessor :local_best
+  attr_accessor :local_best, :local_average, :local_deviation
   include Gmaps4rails::ActsAsGmappable
   include Mongoid::Document
   
@@ -174,6 +174,9 @@ class School
     dist = dists[id_series]
     (average, deviation) = dist
 
+    self.local_average  = average
+    self.local_deviation = deviation
+    
     if self.prova_brasil < average - 0.53*deviation
       quality = 0
     elsif self.prova_brasil > average + 0.53*deviation

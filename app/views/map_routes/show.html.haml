@@ -3,12 +3,6 @@
   - options = {auto_adjust: true, auto_zoom: true, raw: controls}
   = gmaps "map_options" => options, "direction" => {"data" => @json }
   
-  #detail_area
-    %p
-      meu div eh divino
-    
-
-  
 - content_for :scripts do
   = javascript_include_tag "RouteBoxer"
   = javascript_include_tag "filters"

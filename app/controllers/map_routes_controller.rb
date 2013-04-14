@@ -44,6 +44,9 @@ class MapRoutesController < ApplicationController
     @json = []
 
     dists = Statistics.get_distributions(@markers)
+    @markers.each do |school|
+      school.quality(dists)
+    end
     
     @json[0] = @markers.to_gmaps4rails do |school, marker|
       marker.infowindow render_to_string(:partial => "/schools/infowindow", :locals => {school: school });

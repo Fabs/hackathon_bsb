@@ -2,8 +2,38 @@
   .row
     %h4
       %b
-        Nome:
-      %span.no_b
         = school.name
+        - cat = school.grades.collect{|g| g.id_serie}.collect{|g| g.to_s+'º'}.join(" e ")
+      %br
+    
     %p
-      = link_to "ver detalhes", "", :class => "btn btn-primary btn-resize", "school_id" => school.id
+      %b.underscore
+        Índice ProvaBrasil (0 a 10)
+    %p
+      Tem notas para:
+      %b
+        = "#{cat}  ano"
+    %p
+      Esta Ecola:
+      %b
+        = school.prova_brasil.round(1)
+    %p
+      Média das escolas em sua rota:
+      %b
+        = school.local_average.round(1)
+    %p
+      %b.underscore
+        Recursos
+    %p.image_resources
+      - if school.has_computer?
+        = image_tag "has_computer.png"
+      - if school.has_internet?
+        = image_tag "has_internet.png"      
+      - if school.has_library?
+        = image_tag "has_library.png"      
+      - if school.has_laboratory?
+        = image_tag "has_laboratory.png"      
+      - if school.has_sport?
+        = image_tag "has_sport.png"      
+      - if school.has_art?      
+        = image_tag "has_art.png"  
