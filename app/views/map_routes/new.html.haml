@@ -8,7 +8,9 @@
   .row
     .span12.search
       %h3.center
-        Coloque o endereço da onde você mora e da onde você trabalha e descubra agora mesmo as melhores escolas  no caminho até o seu trabalho.
+        Descubra as melhores escolas no caminho de casa ao trabalho.
+        <br \>
+        Basta preencher os endereços abaixo:
       %p
       .row.titles
         .span1
@@ -22,9 +24,9 @@
         .row
           .span1
           .span4
-            = text_field_tag(:origin_location, @origin, :placeholder => "ex: São Paulo")
+            = text_field_tag(:origin_location, @origin, :placeholder => "ex: endereço onde moro")
           .span4
-            = text_field_tag(:destination_location, @destination, :placeholder => "ex: Caraguatatuba")
+            = text_field_tag(:destination_location, @destination, :placeholder => "ex: endereço onde trabalho")
           / .span4
           /   = text_field_tag(:detour, @default_detour, :placeholder => "1")
           .span1
@@ -70,7 +72,7 @@
         %h4.blue
           3. Escolha a escola ideal para o seu filho
         %p
-          Ache a melhor escola para o seu filho e veja como matriculá-lo nela.
+          Ache a melhor escola para o seu filho e veja como matriculá-lo nela. Isso sem alterar o seu roteiro diário.
           
 - content_for :seo do
   %span

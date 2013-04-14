@@ -3,6 +3,11 @@
   - options = {auto_adjust: true, auto_zoom: true, raw: controls}
   = gmaps "map_options" => options, "direction" => {"data" => @json }
   
+  #detail_area
+    %p
+      meu div eh divino
+    
+
   
 - content_for :scripts do
   = javascript_include_tag "RouteBoxer"
@@ -12,7 +17,7 @@
   
 .container.school_count_notifier
   .span6.resizable
-    .alert.alert-escolamaps
+    .alert.alert-escolamaps.hidden_filters
       //= image_tag 
       %span.removable
         Você está vendo 
@@ -38,12 +43,12 @@
     
   .row.resizable
     .span4.resizable
-      .well
+      .well.hidden_filters
         %h4
           Selecione o que você acha importante em uma escola.
   .row.resizable
     .span4.resizable
-      .well.filters
+      .well.filters.hidden_filters
         %p
           %h4
             Desempenho das escolas (nesta região)
@@ -55,7 +60,7 @@
               = School.i18npt[f]
   .row.resizable
     .span4.resizable
-      .well.filters
+      .well.filters.hidden_filters
         %p
           %h4
             Recursos Extras

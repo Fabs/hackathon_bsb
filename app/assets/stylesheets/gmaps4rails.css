@@ -2,6 +2,10 @@ body, html, .map_container{
   height: 100%;
 }
 
+.map_container {
+  
+}
+
 /*Fix for google maps*/
 .map_container img {
   max-width: none;

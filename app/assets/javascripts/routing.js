@@ -66,6 +66,7 @@ function find_bounds(){
           deviation = data[2][1]
           Gmaps.map.map.panBy(-1*0.1*$("html").width(),0)                                  
           install_filters();
+          show_filters_panel();
         },
         dataType: "json",
         contentType: "application/json",

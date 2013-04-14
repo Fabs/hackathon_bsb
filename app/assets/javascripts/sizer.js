@@ -7,6 +7,7 @@ function resize_map(){
   $(".removable").hide();
   $(".map_container").width("50%");
   $(".map_container").css("border-right","1px solid gray");  
+  $(".map_container").css("display","inline-block");  
   
   Gmaps.map.map.panBy(0.28*$("html").width(),0)    
   google.maps.event.trigger(Gmaps.map, 'resize');
@@ -14,7 +15,9 @@ function resize_map(){
 }
 
 function info_for_school(school_id){
-  
+  $.get("/escola/"+school_id+"/details", function(){
+    
+  });
 }
 
 $(document).on("click",".btn-resize",function() {
