@@ -138,17 +138,27 @@ class School
   end
 
   def prova_brasil
-    if @grades.count == 1
-      final_grade = @grades.first.prova_brasil
-    elsif @grades.count > 1
+    if @prova_brasil == nil
+      @prova_brasil = self.calc_prova_brasil
+    end
+
+    return @prova_brasil
+  end
+
+  def calc_prova_brasil
+    if self.grades.count == 1
+      final_grade = self.grades.first.prova_brasil
+    elsif self.grades.count > 1
       final_grade = self.calc_grades_average
     else # TODO: throw me
       final_grade = 5.42
     end
+
+    return final_grade
   end
 
   def calc_grades_average
-    @grades.inject(0) {|sum, g| sum += g.prova_brasil} / @grades.count
+    self.grades.inject(0) {|sum, g| sum += g.prova_brasil} / self.grades.count
   end
   
   def quality(dists)
