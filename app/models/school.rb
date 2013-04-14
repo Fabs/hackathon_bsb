@@ -112,10 +112,18 @@ class School
     score = self.provabrasil.round(0)
   
     color = ["ff5047","f9d230","7ef41e"][rank]
+    if rank == 0
+      name = "low_quality_small"
+    elsif rank == 1
+      name = "normal_small"
+    else
+      name = "high_quality_small"
+    end
+
     marker =  {
-     "picture" => "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=#{score}|#{color}|000000",
+     "picture" => "/assets/#{name}.png",
      "width" => 21,
-     "height" => 34,
+     "height" => 27,
     }
     return marker
   end
