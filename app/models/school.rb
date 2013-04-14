@@ -75,7 +75,6 @@ class School
   field :location, type: Point
   field :address, type: String
   field :type, type: String  
-  field :name, type: String
   
   field :rank, type: Float
   field :competence, type: Array
@@ -169,5 +168,9 @@ class School
       end
     end
     return self.local_quality
+  end
+  
+  def name
+    self.no_entidade
   end
 end
