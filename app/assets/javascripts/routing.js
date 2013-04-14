@@ -2,6 +2,7 @@ var directionService = new google.maps.DirectionsService();
 var rboxer = new RouteBoxer();
 var detour = $("#detour").attr("value");
 var debug = false;
+var global_google;
 
 function find_bounds(){
   var request = {
@@ -57,6 +58,9 @@ function find_bounds(){
         data: JSON.stringify(json_data),
         success: function(data) {
           Gmaps.map.addMarkers(JSON.parse(data[0]));
+          for (var i=0; i<Gmaps.map.markers.length; i++) {
+            marker = Gmaps.map.markers[i];
+          }
           best_school_id = data[1];
           average = data[2][0]
           deviation = data[2][1]
@@ -71,6 +75,7 @@ function find_bounds(){
 }
 
 Gmaps.map.callback = function() {
+  global_google = google;
    google.maps.event.addListenerOnce(Gmaps.map.serviceObject, 'idle', function(){
      find_bounds();
    });

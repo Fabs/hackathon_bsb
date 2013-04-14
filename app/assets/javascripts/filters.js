@@ -10,6 +10,18 @@ function blink_update(item,value){
   });
 }
 
+function update_filters(){
+  visibles = 0;
+  for (var i=0; i<Gmaps.map.markers.length; i++) {
+    marker = Gmaps.map.markers[i];
+    
+    if (marker.serviceObject.getVisible()){
+      visibles += 1
+    }
+  }
+  blink_update("#current_markers",visibles);
+}
+
 // function blink(item,current,target){
 //   $(item).fadeOut(100,function(){
 //     $(item).html(current - 1);
@@ -39,10 +51,12 @@ $(".filter_control").change(function (){
     active = check_mandatory_filters(marker,active)
     marker.serviceObject.setVisible(active);
   }
+  update_filters()
 });
 
 $(".filter_control_quality").change(function (){
   apply_mandatory_filter(this);
+  update_filters();
 });
 
 function check_mandatory_filters(marker,active){

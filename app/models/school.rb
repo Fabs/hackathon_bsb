@@ -89,6 +89,10 @@ class School
    "#{self.name}: #{self.rank}"
   end
   
+  def gmaps4rails_title
+    "#{self.name}"
+  end
+  
   def self.create_random_provabrasil
     gen_pb = Rubystats::NormalDistribution.new(5, 2)
     School.all.each do |school|
