@@ -8,34 +8,41 @@
   = javascript_include_tag "RouteBoxer"
   = javascript_include_tag "filters"
   = javascript_include_tag "routing"
+  = javascript_include_tag "sizer"  
   
 .container.school_count_notifier
-  .span6
+  .span6.resizable
     .alert.alert-escolamaps
       //= image_tag 
-      Você está vendo 
+      %span.removable
+        Você está vendo 
       %span.highlighted#current_markers
         25 
       %span
         de
       %span.highlighted#total_markers
         350
-      escolas públicas na sua região
+      %span.removable
+        escolas 
+      %span.removable
+        %b
+          públicas 
+        na sua região
       
   
-.container.floating_on_map_left
+.container.floating_on_map_left.resizable
   .hidden_area
     #parameter_from{value: @route.origin.name}
     #parameter_to{value: @route.destination.name}  
     #detour{value: @detour}
     
-  .row
-    .span4
+  .row.resizable
+    .span4.resizable
       .well
         %h4
           Selecione o que você acha importante em uma escola.
-  .row
-    .span4
+  .row.resizable
+    .span4.resizable
       .well.filters
         %p
           %h4
@@ -46,8 +53,8 @@
               = image_tag "#{f}.png"
               = check_box_tag f,"1", checked = true, :class => "filter_control_quality", :filter_type => i
               = School.i18npt[f]
-  .row
-    .span4
+  .row.resizable
+    .span4.resizable
       .well.filters
         %p
           %h4
