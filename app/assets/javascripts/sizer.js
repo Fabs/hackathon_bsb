@@ -1,3 +1,4 @@
+var resized = false;
 function resize_map(){
   $(".resizable").width("170px");
   
@@ -7,10 +8,22 @@ function resize_map(){
   $(".map_container").width("50%");
   $(".map_container").css("border-right","1px solid gray");  
   
-  Gmaps.map.map.panBy(0.28*$("html").width(),0)                                  
+  Gmaps.map.map.panBy(0.28*$("html").width(),0)    
+  google.maps.event.trigger(Gmaps.map, 'resize');
+  
 }
 
-$(".logo").click(function (){
-  resize_map();
+function info_for_school(school_id){
+  
+}
+
+$(document).on("click",".btn-resize",function() {
+  school_id = $(this).attr("school-id");
+  if (! resized){
+    resize_map();  
+    resized = true;
+  }
+  
+  info_for_school(school_id);
   return false;
 });

@@ -4,9 +4,6 @@
       %b
         Nome:
       %span.no_b
-        = link_to school.name , show_escola_path(school)
-    %h4
-      %b
-        Rank:
-      %span.no_b
-        = school.provabrasil
+        = school.name
+    %p
+      = link_to "ver detalhes", "", :class => "btn btn-primary btn-resize", "school_id" => school.id
