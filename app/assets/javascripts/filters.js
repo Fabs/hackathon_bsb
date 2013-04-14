@@ -1,6 +1,7 @@
 function install_filters(){
 	blink_update("#total_markers",Gmaps.map.markers.length+"");
 	blink_update("#current_markers",Gmaps.map.markers.length+"");  
+  $("#low_quality").click();
 }
 
 function blink_update(item,value){

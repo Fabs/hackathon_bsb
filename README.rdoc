@@ -1,40 +1,10 @@
-== (1) First Page
+== (1) Deslocamento
 - Escolher deslocamento
-- Autocompletar de endereços
-
-== (2) Second Page
-- Trocar markers da origem destino
-- Box da escola com notas
-- Filtros de cor
-- Filtros de tipo de escola
-- Outros Filtros
 - Mudar Deslocamento
 
-== (0) Chores
-- xscope (download)
-
 == Distribuir Tarefas
-- escolher o nome
 - Criar twitter
-- Comprar domínio
-- Quais são os filtros para fazer?
 - Olhar e refazer os textos da página inicial
-
-== Cadu
-- Importar escolas para o banco com (nome, notas e endereço)
-- Criar a nota geral da escola
-- Achar lat lang
-- Achar filtros
-- Migrar de só SP para O MUNDO
-- Segurança
-
-== Pedro
-- Página social
-- Validar form
-- CSS
-- Botao voltar para a rota
-- devise
-- Comparação Escolas
 
 == Custos
 - 10 reais ($4.99) programa de encontrar fontes
