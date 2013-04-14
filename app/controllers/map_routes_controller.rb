@@ -52,8 +52,8 @@ class MapRoutesController < ApplicationController
         has_internet: school.has_internet?,
         has_library: school.has_library?,
         has_laboratory: school.has_laboratory?,
-        has_sport: school.has_sport,
-        has_art: school.has_art,
+        has_sport: school.has_sport?,
+        has_art: school.has_art?,
         quality_category: school.quality(dists)} },
         );
     end

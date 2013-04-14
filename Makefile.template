@@ -6,6 +6,6 @@ all:
 		parse_censo[$(SQS)/micro_censo_escolar_2012/DADOS/TS_ESCOLA.TXT] \
 		parse_geo[scraping/geo.csv] \
 		parse_quest_escola[$(SQS)/microdados_prova_brasil_2011/Dados/TS_QUEST_ESCOLA.csv] \
+		parse_quest_diretor[$(SQS)/microdados_prova_brasil_2011/Dados/TS_QUEST_DIRETOR.csv] \
 		parse_resultado_escola[$(SQS)/microdados_prova_brasil_2011/Dados/TS_RESULTADO_ESCOLA.csv] \
 		clean_schools \
-		random_provabrasil
