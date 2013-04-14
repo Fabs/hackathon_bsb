@@ -11,13 +11,13 @@
   
 .container.school_count_notifier
   .span6
-    .alert.alert-info
+    .alert.alert-escolamaps
       //= image_tag 
       Você está vendo 
-      %span#total_schools
+      %span.highlighted#current_markers
         25 
       escolas públicas dentre 
-      %span#total_schools
+      %span.highlighted#total_markers
         350 
       na sua região
       
@@ -39,11 +39,12 @@
         %p
           %h4
             Desempenho das escolas (nesta região)
-        - School.color_filters.each_with_index do |f,i|
-          .filter_area
-            = image_tag "#{f}.png"
-            = check_box_tag f,"1", checked = true, :class => "filter_control_quality", :filter_type => i
-            = School.i18npt[f]
+        .centered
+          - School.color_filters.each_with_index do |f,i|
+            .filter_area_quality
+              = image_tag "#{f}.png"
+              = check_box_tag f,"1", checked = true, :class => "filter_control_quality", :filter_type => i
+              = School.i18npt[f]
   .row
     .span4
       .well.filters

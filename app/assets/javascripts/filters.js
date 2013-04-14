@@ -1,5 +1,25 @@
 function install_filters(){
+	blink_update("#total_markers",Gmaps.map.markers.length+"");
+	blink_update("#current_markers",Gmaps.map.markers.length+"");  
 }
+
+function blink_update(item,value){
+  $(item).fadeOut('slow', function(){
+    $(item).html(value);
+    $(this).fadeIn('slow');
+  });
+}
+
+// function blink(item,current,target){
+//   $(item).fadeOut(100,function(){
+//     $(item).html(current - 1);
+//     $(this).fadeIn(100,function(){
+//       if ((current - 1) != target){
+//         blink_update(item,current - 1, target)
+//       }
+//     });
+//   });
+// }
 
 $(".filter_control").change(function (){
   for (var i=0; i<Gmaps.map.markers.length; i++) {
