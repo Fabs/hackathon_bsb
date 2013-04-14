@@ -36,13 +36,34 @@ $(".filter_control").change(function (){
         }
       } 
     });
+    active = check_mandatory_filters(marker,active)
     marker.serviceObject.setVisible(active);
   }
 });
 
 $(".filter_control_quality").change(function (){
-  category = $(this).attr("filter_type");
-  state = $(this).is(':checked');
+  apply_mandatory_filter(this);
+});
+
+function check_mandatory_filters(marker,active){
+  after_check_state = active;
+  $(".filter_control_quality").each(function(){
+    category = $(this).attr("filter_type");
+    state = $(this).is(':checked');
+    
+    if (state == false){
+      marker_category = marker.filter_logic["quality_category"].toString();
+      if (marker_category == category ){
+        after_check_state = false;
+      }
+    }
+  });
+  return after_check_state;
+}
+
+function apply_mandatory_filter(filter){
+  category = $(filter).attr("filter_type");
+  state = $(filter).is(':checked');
   
   for (var i=0; i<Gmaps.map.markers.length; i++) {
     marker = Gmaps.map.markers[i];
@@ -51,4 +72,4 @@ $(".filter_control_quality").change(function (){
       marker.serviceObject.setVisible(state);
     }
   }
-});
+}
