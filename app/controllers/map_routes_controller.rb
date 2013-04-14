@@ -2,8 +2,6 @@
 class MapRoutesController < ApplicationController
   include Geocoder
   def new
-    @origin = "Rua do Matão 1010, Cidade Universiatária, São Paulo"
-    @destination = "Parque do Ipiranga"
     @json = {map_options: {zoom: 3, center_latitude: -40.235004, center_longitude: -51.92528}}
   end
 

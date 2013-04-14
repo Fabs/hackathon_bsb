@@ -24,9 +24,9 @@
         .row
           .span1
           .span4
-            = text_field_tag(:origin_location, @origin, :placeholder => "ex: endereço onde moro")
+            = text_field_tag(:origin_location, nil, :placeholder => "ex: endereço onde moro")
           .span4
-            = text_field_tag(:destination_location, @destination, :placeholder => "ex: endereço onde trabalho")
+            = text_field_tag(:destination_location, nil, :placeholder => "ex: endereço onde trabalho")
           / .span4
           /   = text_field_tag(:detour, @default_detour, :placeholder => "1")
           .span1
