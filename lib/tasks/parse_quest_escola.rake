@@ -1,24 +1,6 @@
 desc "Parse ts_quest_escola data"
 # Example: rake parse_quest_escola[/path/to/microdados_prova_brasil_2011/Dados/TS_QUEST_ESCOLA.csv]
 
-# TODO: This is duplicated code, shared with other(s) task(s)
-def find_or_create_school(id)
-  results = School.where(:pk_cod_entidade => id)
-
-  if results.count > 0
-    school = results.first
-  else
-    school = School.create!(
-      pk_cod_entidade: id,
-      # Required fields
-      location: [0, 0],
-      gmaps: true
-    )
-  end
-
-  return school
-end
-
 def getAnswer(fields, question)
   index = 6 + question
   value = fields[index]
@@ -46,7 +28,7 @@ task :parse_quest_escola, [:file] => :environment do |t, args|
 
     # Getting school in database to be updated
     id_escola = fields[3].to_i
-    school = find_or_create_school(id_escola)
+    school = School.find_by(:pk_cod_entidade => id_escola)
 
     # New information to be saved
     school.tx_resp_q037 = getAnswer(fields, 37)

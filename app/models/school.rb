@@ -117,23 +117,6 @@ class School
     return marker
   end
   
-  def has_computer
-    magic % 2 == 0
-  end
-    
-  def has_internet
-    magic % 4 == 0    
-  end
-  
-  def has_library
-    magic % 8 == 0
-  end
-  
-  def has_laboratory
-    magic % 16 == 0
-  end
-  
-  
   def has_sport
     magic % 32 == 0  
   end
