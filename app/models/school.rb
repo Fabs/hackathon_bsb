@@ -1,14 +1,15 @@
 #encoding: utf-8
 class School
   attr_accessor :local_best
-  attr_accessor :local_quality
+  attr_accessor :quality
   include Gmaps4rails::ActsAsGmappable
   include Mongoid::Document
   
   # micro_censo fields
   field :pk_cod_entidade, type: Integer
   field :no_entidade, type: String
-  index({ pk_cod_entidade: 1 }, {unique: true, name: 'pk_cod_entidade_index'})
+
+  index({ pk_cod_entidade: 1 }, { unique: true })
 
   #
   # Begin resources
@@ -48,7 +49,7 @@ class School
   # Begin Prova Brasil
   #
 
-  embeds_many :grades
+  has_many :grades, autosave: true
 
   #
   # End Prova Brasil
@@ -108,7 +109,7 @@ class School
   end
   
   def gmaps4rails_marker_picture
-    rank = self.quality(0,0)
+    rank = self.quality([]) # already in cache
     score = self.provabrasil.round(0)
   
     color = ["ff5047","f9d230","7ef41e"][rank]
@@ -157,29 +158,43 @@ class School
       "high_quality" => "Forte",
     }
   end
-  
-  #Statistical Map
-  def self.local_average(schools)
-    schools.inject(0){|sum,s| sum + s.provabrasil} / schools.count.to_f
-  end
-  
-  def self.local_deviation(schools)
-    ex2 = schools.inject(0){|sum,s| sum + (s.provabrasil**2)} / schools.count.to_f    
-    ex = School.local_average(schools)
-    (ex2 - ex*ex)**0.5
-  end
-  
-  def quality(average,deviation)
-    if self.local_quality == nil
-      if self.provabrasil < average - 0.53*deviation 
-        self.local_quality =  0 
-      elsif self.provabrasil > average + 0.53*deviation 
-        self.local_quality =  2 
-      else
-        self.local_quality = 1
-      end
+
+  def prova_brasil
+    if @grades.count == 1
+      final_grade = @grades.first.prova_brasil
+    elsif @grades.count > 1
+      final_grade = self.calc_grades_average
+    else # TODO: throw me
+      final_grade = 5.42
     end
-    return self.local_quality
+  end
+
+  def calc_grades_average
+    @grades.inject(0) {|sum, g| sum += g.prova_brasil} / @grades.count
+  end
+  
+  def quality(dists)
+    if @quality == nil
+      @quality = calc_quality(dists)
+    end
+
+    return @quality
+  end
+
+  def calc_quality(dists)
+    id_series = self.grades.collect{|g| g.id_serie}.sort
+    dist = dists[id_series]
+    (average, deviation) = dist
+
+    if self.prova_brasil < average - 0.53*deviation
+      quality = 0
+    elsif self.prova_brasil > average + 0.53*deviation
+      quality = 2
+    else
+      quality = 1
+    end
+
+    return quality
   end
   
   def name

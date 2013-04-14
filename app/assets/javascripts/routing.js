@@ -62,8 +62,11 @@ function find_bounds(){
             marker = Gmaps.map.markers[i];
           }
           best_school_id = data[1];
+
+          // TODO: deleteme
           average = data[2][0]
           deviation = data[2][1]
+
           Gmaps.map.map.panBy(-1*0.1*$("html").width(),0)                                  
           install_filters();
           show_filters_panel();
