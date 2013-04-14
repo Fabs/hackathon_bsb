@@ -10,6 +10,11 @@ function blink_update(item,value){
   });
 }
 
+function show_filters_panel(){
+  $('.hidden_filters').fadeIn(1000)
+}
+
+
 function update_filters(){
   visibles = 0;
   for (var i=0; i<Gmaps.map.markers.length; i++) {

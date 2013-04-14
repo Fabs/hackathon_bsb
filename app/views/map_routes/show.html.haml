@@ -11,7 +11,7 @@
   
 .container.school_count_notifier
   .span6
-    .alert.alert-escolamaps
+    .alert.alert-escolamaps.hidden_filters
       //= image_tag 
       Você está vendo 
       %span.highlighted#current_markers
@@ -31,12 +31,12 @@
     
   .row
     .span4
-      .well
+      .well.hidden_filters
         %h4
           Selecione o que você acha importante em uma escola.
   .row
     .span4
-      .well.filters
+      .well.filters.hidden_filters
         %p
           %h4
             Desempenho das escolas (nesta região)
@@ -48,7 +48,7 @@
               = School.i18npt[f]
   .row
     .span4
-      .well.filters
+      .well.filters.hidden_filters
         %p
           %h4
             Recursos Extras
