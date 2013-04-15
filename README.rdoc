@@ -1,13 +1,3 @@
-== (1) Deslocamento
-- Escolher deslocamento
-- Mudar Deslocamento
+Projeto feito na Hackathon de Dados abertos do INEP.
 
-== Distribuir Tarefas
-- Criar twitter
-- Olhar e refazer os textos da página inicial
-
-== Custos
-- 10 reais ($4.99) programa de encontrar fontes
-- 43 reais ($25) icones
-- 19.67 reais ($9.95) melhorescola.com
-- 2.60 IOF TOTAL
+Qualquer dúvida, escrever para fabriciosn@gmail.com
